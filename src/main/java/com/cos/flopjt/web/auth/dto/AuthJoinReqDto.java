@@ -16,6 +16,7 @@ public class AuthJoinReqDto {
 				.username(username)
 				.password(password)
 				.nickname(nickname)
+				.email(username)
 				.build();
 	}
 }

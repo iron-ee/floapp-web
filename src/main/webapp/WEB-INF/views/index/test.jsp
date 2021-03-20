@@ -197,33 +197,6 @@
 </div>
 
 
-				
-	<!-- Footer -->
-	<footer>
-		<div class="instagram-footer">
-			<div id="instagram-carousel" class="owl-carousel clearfix">
-			</div>
-			<a class="follow" target="_blank" href="https://instagram.com/futurethemes2015/">Follow me on Instragam <br> <span class="user-ins">@futurethemes2015</span></a>
-		</div><!-- .instagram-footer -->
-		
-		<div class="info-footer">
-			<h1>The <span class="colored">Artist</span></h1>
-			
-			<ul class="social-footer">
-				<li><a href="#" class="fa fa-facebook"></a></li>
-				<li><a href="#" class="fa fa-twitter"></a></li>
-				<li><a href="#" class="fa fa-soundcloud"></a></li>
-				<li><a href="#" class="fa fa-youtube-play"></a></li>
-				<li><a href="#" class="fa fa-vimeo"></a></li>
-				<li><a href="#" class="fa fa-google-plus"></a></li>
-			</ul>
-		</div>
-
-		<div class="copyright-footer">
-			<p>Copyright © 2015 FutureThemes / <a href="#">@futurethemes</a></p>
-		</div>
-	</footer>
-	
 	
 	<script type="text/javascript">
 	jQuery(document).ready(function($) {
@@ -321,6 +294,4 @@
 	});
 	</script>
 
-
-</body>
-</html>
+<%@ include file="../layout/footer.jsp" %>
