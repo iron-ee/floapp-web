@@ -1,16 +1,24 @@
 package com.cos.flopjt.domain.user;
 
 import java.sql.Timestamp;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OrderBy;
 
 import org.hibernate.annotations.CreationTimestamp;
+
+import com.cos.flopjt.domain.music.Music;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -42,6 +50,11 @@ public class User {
 	
 	@Enumerated(EnumType.STRING)
 	private RoleType role;
+	
+	@OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
+	@JsonIgnoreProperties({"user"})
+	@OrderBy("id desc")
+	private List<Music> musics;
 	
 	@CreationTimestamp
 	private Timestamp createDate;

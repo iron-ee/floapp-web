@@ -54,6 +54,7 @@
 	<script type="text/javascript" src="../../../assets/jplayer/add-on/jplayer.playlist.js"></script>
 	<!-- MailChimp Subscribe Form Script -->
 	<script type='text/javascript' src='../../../assets/js/mc.validate.js'></script>
+	
 </head>
 <body data-spy="scroll" data-target=".nav-container" data-offset="80">
 	
@@ -110,7 +111,7 @@
 	<!-- Header Bar 2 -->
 	<div id="home" class="header-bar-2">
 		<div class="logo-container">
-			<a href="mainForm"><span>Music Is</span> My Life</a>
+			<a href="/mainForm"><span>Music Is</span> My Life</a>
 		</div>
 		<div class="player-nav-container">
 			<!-- Audio Player -->
@@ -177,8 +178,8 @@
 							<li><a href="loginForm">login</a></li>
 						</c:when>
 						<c:otherwise>
-							<li><a href="mainForm">info</a></li>
-							<li><a href="logout">logout</a></li>
+							<li><a href="/main/${principal.user.id}">info</a></li>
+							<li><a href="/logout">logout</a></li>
 						</c:otherwise>
 					</c:choose>
 				</ul>
@@ -197,5 +198,6 @@
 
 	<!-- Go to top button -->
 	<div class="back-to-top fa fa-angle-up"></div>
+
 
 

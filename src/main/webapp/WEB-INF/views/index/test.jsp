@@ -141,10 +141,8 @@
 						</div>
 					</div>
 					<!-- Playlist -->
-					<div class="jp-playlist">
-						<ul>
-							<li>&nbsp;</li>
-						</ul>
+					<div class="jp-playl">
+						
 					</div>
 				</div>
 				<div class="jp-no-solution">
@@ -190,108 +188,142 @@
 		</div>
 
 		<div class="button-container">
-			<a href="video-gallery.html" class="button">View Gallery <i class="fa fa-youtube-play"></i></a>
+			<button id="btn-findAll" class="button">View Gallery <i class="fa fa-youtube-play"></i></button>
+			<textarea id="title-url">IU-Celebrity</textarea>
 		</div>
 	</div>
 
 </div>
 
-
 	
-	<script type="text/javascript">
-	jQuery(document).ready(function($) {
-   		"use strict";
+	<script>
+	//<audio src="http://localhost:8080/assets/music/IU-Celebrity.mp3" volume="20%"></audio>
+	//fetch("/musicAll").then((response)=>response.json()).then((data)=>console.log(data))
 
-   		var myPlaylist = new jPlayerPlaylist({
-			jPlayer: "#jquery_jplayer_1",
-			cssSelectorAncestor: "#jp_container_1"
-		}, [
-			{	
-				artist: "IU",
-				title:"Celebrity",
-				mp3:"../../assets/music/iu-celebrity.mp3",
-			},
-			{
-				artist: "BTS",
-				title:"Dynamite",
-				mp3:"../../assets/music/bts-dynamite.mp3",
-			}
-		],{
-			playlistOptions: {
-			    enableRemoveControls: true
-			},
-			swfPath: "../../../assets/jplayer/jplayer",
-			supplied: "mp3",
-			wmode: "window",
-			useStateClassSkin: true,
-			autoBlur: false,
-			smoothPlayBar: true,
-			keyEnabled: true,
-		});
+	//musicList(music).then((data))=>console.log("data:", data)
 
-		// Show The Current Track !!
-		$("#jquery_jplayer_1").on(
-		    $.jPlayer.event.ready + ' ' + $.jPlayer.event.play,
-		   	function(event){
-		       	var current = myPlaylist.current;
-			    var playlist = myPlaylist.playlist;       
-			    $.each(playlist, function (index, obj) {
-			        if (index == current) {
-			            $("#nowPlaying .artist-name").html(obj.artist + " - ");
-			            $("#nowPlaying .track-name").html(obj.title);
-			        }
-			    });
-		   	}
-		);
+	//async function music(){
+		//await fetch("/musicAll").then((response)=>response.json()).then((data)=>console.log(data));
+	//};
+	//music()
+	//$("#btn-findAll").on("click", (e)=>{
+		//e.preventDefault();
+		//fetch("/musicAll").then((response)=>response.json()).then((data)=>console.log(data))
+	//});
+	let list = fetch("/musicAll").then((response)=>response.json());
 
-   		
-		var myPlaylist2 = new jPlayerPlaylist({
-			jPlayer: "#jquery_jplayer_2",
-			cssSelectorAncestor: "#jp_container_2"
-		}, [
-			{	
-				artist: "IU",
-				title:"Celebrity",
-				mp3:"../../../assets/music/iu-celebrity.mp3",
-			},
-			{
-				artist: "BTS",
-				title:"Dynamite",
-				mp3:"../../../assets/music/bts-dynamite.mp3",
-			}
-		], {
-			playlistOptions: {
-			    enableRemoveControls: true
-			},
-			swfPath: "../../../assets/jplayer/jplayer",
-			supplied: "mp3",
-			wmode: "window",
-			useStateClassSkin: true,
-			autoBlur: false,
-			smoothPlayBar: true,
-			keyEnabled: true,
-		});
+	var a = "IU";
+	var b = "Celebrity";
+	var c = "http://localhost:8080/assets/music/"+a+"-"+b+".mp3";
+	var plist = [{artist:a,title:b,mp3:c},{artist:a,title:b,mp3:c},{artist:a,title:b,mp3:c}];
+	console.log(plist);
+
+	$("#btn-findAll").on("click", (e)=>{
+		e.preventDefault();
+		let da = $("#title-url").val();
+		console.log(da);
+		jQuery(document).ready(function($) {
 		
-		// Show The Current Track !!
-		$("#jquery_jplayer_2").on(
-		    $.jPlayer.event.ready + ' ' + $.jPlayer.event.play,
-		   	function(event){
-		       	var current = myPlaylist2.current;
-			    var playlist = myPlaylist2.playlist;       
-			    $.each(playlist, function (index, obj) {
-			        if (index == current) {
-			            $("#nowPlaying2 .artist-name").html(obj.artist + " - ");
-			            $("#nowPlaying2 .track-name").html(obj.title);
-			        }
-			    });
-		   	}
-		);
-		$("#jquery_jplayer_2").on($.jPlayer.event.play, function(event) {
-		       $('#player-bars').addClass('animated');
-		   	}
-		);
+	   		"use strict";
+			
+	   		var myPlaylist = new jPlayerPlaylist({
+				jPlayer: "#jquery_jplayer_1",
+				cssSelectorAncestor: "#jp_container_1"
+			},[
+				{	
+					id:1,
+					artist: "IU",
+					title:"Celebrity",
+					mp3:"http://localhost:8080/assets/music/"+da+".mp3",
+				},
+				{
+					id:2,
+					artist: "BTS",
+					title:"Dynamite",
+					mp3:"http://localhost:8080/assets/music/"+da+".mp3",
+				}
+			],{
+				playlistOptions: {
+				    enableRemoveControls: true
+				},
+				swfPath: "http://localhost:8080/assets/jplayer/jplayer",
+				supplied: "mp3",
+				wmode: "window",
+				useStateClassSkin: true,
+				autoBlur: false,
+				smoothPlayBar: true,
+				keyEnabled: true,
+			});
 
+			// Show The Current Track !!
+			$("#jquery_jplayer_1").on(
+			    $.jPlayer.event.ready + ' ' + $.jPlayer.event.play,
+			   	function(event){
+			       	var current = myPlaylist.current;
+			       	console.log(current);
+				    var playlist = myPlaylist.playlist;
+				    console.log(playlist);       
+				    $.each(playlist, function (index, obj) {
+				        if (index == current) {
+				            $("#nowPlaying .artist-name").html(obj.artist + " - ");
+				            $("#nowPlaying .track-name").html(obj.title);
+				        }
+				    });
+			   	}
+			);
+
+	   		
+			var myPlaylist2 = new jPlayerPlaylist({
+				jPlayer: "#jquery_jplayer_2",
+				cssSelectorAncestor: "#jp_container_2"
+			}, [
+				{	
+					id:1,
+					artist: "IU",
+					title:"Celebrity",
+					mp3:"http://localhost:8080/assets/music/IU-Celebrity.mp3",
+				},
+				{
+					id:2,
+					artist: "BTS",
+					title:"Dynamite",
+					mp3:"http://localhost:8080/assets/music/BTS-Dynamite.mp3",
+				}
+			], {
+				playlistOptions: {
+				    enableRemoveControls: true
+				},
+				swfPath: "http://localhost:8080/assets/jplayer/jplayer",
+				supplied: "mp3",
+				wmode: "window",
+				useStateClassSkin: true,
+				autoBlur: false,
+				smoothPlayBar: true,
+				keyEnabled: true,
+			});
+			
+			// Show The Current Track !!
+			$("#jquery_jplayer_2").on(
+			    $.jPlayer.event.ready + ' ' + $.jPlayer.event.play,
+			   	function(event){
+			       	var current = myPlaylist2.current;
+				    var playlist = myPlaylist2.playlist;       
+				    $.each(playlist, function (index, obj) {
+				        if (index == current) {
+				            $("#nowPlaying2 .artist-name").html(obj.artist + " - ");
+				            $("#nowPlaying2 .track-name").html(obj.title);
+				        }
+				    });
+			   	}
+			);
+			$("#jquery_jplayer_2").on($.jPlayer.event.play, function(event) {
+			       $('#player-bars').addClass('animated');
+			   	}
+			);
+
+		});
 	});
+	
 	</script>
 
 <%@ include file="../layout/footer.jsp" %>
