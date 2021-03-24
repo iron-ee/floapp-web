@@ -14,46 +14,41 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>M I M L</title>	
+	<link rel="shortcut icon" type="favicon/png" href="http://localhost:8080/assets/img/elements/favicon.png"/>
 	<!-- CSS -->
-	<link rel="stylesheet" href="../../../assets/css/bootstrap.css" />
-	<link rel="stylesheet" type="text/css" href="../../../assets/owl-carousel/owl.carousel.css" />
-	<link rel="stylesheet" type="text/css" href="../../../assets/owl-carousel/owl.theme.css" />
-	<link rel="stylesheet" type="text/css" href="../../../assets/owl-carousel/owl.transitions.css" />
-	<link rel="stylesheet" type="text/css" href="../../../assets/lightGallery/css/lightgallery.css" />
+	<link rel="stylesheet" href="http://localhost:8080/assets/css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="http://localhost:8080/assets/owl-carousel/owl.carousel.css" />
+	<link rel="stylesheet" type="text/css" href="http://localhost:8080/assets/owl-carousel/owl.theme.css" />
+	<link rel="stylesheet" type="text/css" href="http://localhost:8080/assets/owl-carousel/owl.transitions.css" />
+	<link rel="stylesheet" type="text/css" href="http://localhost:8080/assets/lightGallery/css/lightgallery.css" />
 	<!-- RS5.0 Main Stylesheet -->
-	<link rel="stylesheet" type="text/css" href="../../../assets/revolution/css/settings.css">
+	<link rel="stylesheet" type="text/css" href="http://localhost:8080/assets/revolution/css/settings.css">
 	<!-- RS5.0 Layers and Navigation Styles -->
-	<link rel="stylesheet" type="text/css" href="../../../assets/revolution/css/layers.css">
-	<link rel="stylesheet" type="text/css" href="../../../assets/revolution/css/navigation.css">
-	<link rel="stylesheet" type="text/css" href="../../../assets/css/style.css" />
-	
-	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    
+	<link rel="stylesheet" type="text/css" href="http://localhost:8080/assets/revolution/css/layers.css">
+	<link rel="stylesheet" type="text/css" href="http://localhost:8080/assets/revolution/css/navigation.css">
+	<link rel="stylesheet" type="text/css" href="http://localhost:8080/assets/css/style.css" />
+	   
     <!-- ======== JavaScript ======== -->
-	<script type="text/javascript" src="../../../assets/js/jquery-1.11.1.min.js"></script>
-	<script type="text/javascript" src="../../../assets/js/smooth-scroll.js"></script>
-	<script type="text/javascript" src="../../../assets/js/bootstrap.js"></script>
-	<script type="text/javascript" src="../../../assets/js/jquery.fitvids.js"></script>
-	<script type="text/javascript" src="../../../assets/owl-carousel/owl.carousel.min.js"></script>
-	<script type="text/javascript" src="../../../assets/lightGallery/js/lightgallery.min.js"></script>
-	<script type="text/javascript" src="../../../assets/js/ajax.gallery.js"></script>
-	<script type="text/javascript" src="../../../assets/js/instafeed.min.js"></script>
-	<script type="text/javascript" src="../../../assets/js/countdown.js"></script>
-	<script type="text/javascript" src="../../../assets/js/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="http://localhost:8080/assets/js/jquery-1.11.1.min.js"></script>
+
+	<script type="text/javascript" src="http://localhost:8080/assets/js/bootstrap.js"></script>
+	<script type="text/javascript" src="http://localhost:8080/assets/js/jquery.fitvids.js"></script>
+	<script type="text/javascript" src="http://localhost:8080/assets/owl-carousel/owl.carousel.min.js"></script>
+	<script type="text/javascript" src="http://localhost:8080/assets/lightGallery/js/lightgallery.min.js"></script>
+	<script type="text/javascript" src="http://localhost:8080/assets/js/ajax.gallery.js"></script>
+	<script type="text/javascript" src="http://localhost:8080/assets/js/instafeed.min.js"></script>
+	<script type="text/javascript" src="http://localhost:8080/assets/js/countdown.js"></script>
+	<script type="text/javascript" src="http://localhost:8080/assets/js/jquery.validate.min.js"></script>
 	<!-- RS5.0 Core JS Files -->
-	<script type="text/javascript" src="../../../assets/revolution/js/jquery.themepunch.tools.min.js?rev=5.0"></script>
-	<script type="text/javascript" src="../../../assets/revolution/js/jquery.themepunch.revolution.min.js?rev=5.0"></script>
+	<script type="text/javascript" src="http://localhost:8080/assets/revolution/js/jquery.themepunch.tools.min.js?rev=5.0"></script>
+	<script type="text/javascript" src="http://localhost:8080/assets/revolution/js/jquery.themepunch.revolution.min.js?rev=5.0"></script>
 	<!-- Custom JavaScript -->
-	<script type="text/javascript" src="../../../assets/js/js.js"></script>
+	<script type="text/javascript" src="http://localhost:8080/assets/js/js.js"></script>
 	<!-- jPlayer Files & JavaScript -->
-	<script type="text/javascript" src="../../../assets/jplayer/jplayer/jquery.jplayer.min.js"></script>
-	<script type="text/javascript" src="../../../assets/jplayer/add-on/jplayer.playlist.js"></script>
+	<script type="text/javascript" src="http://localhost:8080/assets/jplayer/jplayer/jquery.jplayer.min.js"></script>
+	<script type="text/javascript" src="http://localhost:8080/assets/jplayer/add-on/jplayer.playlist.js"></script>
 	<!-- MailChimp Subscribe Form Script -->
-	<script type='text/javascript' src='../../../assets/js/mc.validate.js'></script>
+	<script type='text/javascript' src="http://localhost:8080/assets/js/mc.validate.js"></script>
 	
 </head>
 <body data-spy="scroll" data-target=".nav-container" data-offset="80">
@@ -155,21 +150,16 @@
 			<!-- Nav Container -->
 			<div class="nav-container">
 				<ul id="main-nav" class="main-nav nav">
-					<li><a class="scrollTo" href="mainForm">Home</a></li>
+					<li><a  href="/mainForm">Home</a></li>
 					<li><a class="scrollTo" href="#albums">Albums</a></li>
-					<li><a class="scrollTo" href="#events">Song</a></li>
-					<li><a class="scrollTo" href="#galleryId">Video</a></li>
+					<li><a class="scrollTo" href="#songs">Song</a></li>
+					<li><a class="scrollTo" href="#videos">Video</a></li>
 					<li class="has-submenu">
 						<a href="#">Pages <i class="fa fa-angle-down"></i></a>
-						<ul class="submenu">
-							<li><a href="album-single.html">Album Single</a></li>
-							<li><a href="albums.html">Albums Page</a></li>
-							<li><a href="blog-single.html">Blog Single</a></li>
-							<li><a href="blog.html">Blog Page</a></li>
-							<li><a href="events.html">Events</a></li>
-							<li><a href="video-gallery.html">Video Gallery</a></li>
-							<li><a href="header-2.html">Header Style 2</a></li>
-							<li><a href="owl-slider.html">Owl Slider</a></li>
+						<ul class="submenu">							
+							<li><a href="/albumForm">Albums Page</a></li>							
+							<li><a href="blog.html">Blog Page</a></li>							
+							<li><a href="/videoForm">Video Gallery</a></li>					
 						</ul>
 					</li>
 					<c:choose>

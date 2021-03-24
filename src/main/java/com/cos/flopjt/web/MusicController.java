@@ -38,4 +38,5 @@ public class MusicController {
 	public @ResponseBody List<Music> findAll() {
 		return musicService.전체찾기();
 	}
+
 }

@@ -96,7 +96,7 @@
 	</div>
 
 	<!-- Favorite music -->
-	<div class="col-sm-12 album-container-single">
+	<div id="songs" class="col-sm-12 album-container-single">
 		<div id="jquery_jplayer_2" class="jp-jplayer"></div>
 		<div id="jp_container_2" class="jp-audio single-album-player"
 			role="application" aria-label="media player">
@@ -169,18 +169,15 @@
 			</div>
 		</div>
 
-		<p>This is our best albums launched in 2015. it contains eight
-			awesome tracks recorded especially for you. Lorem ipsum dolor sit
-			amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-			ut labore.</p>
+		<p></p>
 	</div>
 
 
 	<!-- Video Gallery -->
-	<div class="container section video-gallery">
+	<div id="videos" class="container section video-gallery">
 		<div class="category-head">
 			<h1>New <span class="colored">Video</span></h1>
-			<p>Watch our awesome performance from these concerts in 2015. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+			<p> 아직도 안 본 흑우 읎제~</p>
 		</div>
 		
 		<div class="videos-container row">
@@ -203,8 +200,7 @@
 		</div>
 
 		<div class="button-container">
-			<button id="btn-findAll" class="button">View Gallery <i class="fa fa-youtube-play"></i></button>
-			<textarea id="title-url">IU-Celebrity</textarea>
+			<a class="button">View Gallery <i class="fa fa-youtube-play"></i></a>
 		</div>
 	</div>
 
