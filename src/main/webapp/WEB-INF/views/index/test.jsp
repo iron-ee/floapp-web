@@ -13,12 +13,12 @@
 		<div class="albums row">
 			<div class="col-sm-4">
 				<div class="album">
-					<img src="../assets/img/albums/album-iu.png" alt="cover" class="img-responsive">
+					<img src="http://localhost:8080/assets/img/albums/album-iu.png" alt="cover" class="img-responsive">
 					<div class="cd-mask">
 						<div class="center"></div>
 					</div>
 					<div class="info">
-						<a class="album-name" href="album-single.html">Celebrity <i class="fa fa-arrow-circle-right"></i></a>
+						<a class="album-name" href="/album/1">Celebrity <i class="fa fa-arrow-circle-right"></i></a>
 						<br>
 						<p>아이유(IU)</p>
 					</div>
@@ -26,12 +26,12 @@
 			</div>
 			<div class="col-sm-4">
 				<div class="album">
-					<img src="../assets/img/albums/album-shin.png" alt="cover" class="img-responsive">
+					<img src="http://localhost:8080/assets/img/albums/album-shin.png" alt="cover" class="img-responsive">
 					<div class="cd-mask">
 						<div class="center"></div>
 					</div>
 					<div class="info">
-						<a class="album-name" href="album-single.html">Mind Travel <i class="fa fa-arrow-circle-right"></i></a>
+						<a class="album-name" href="/album/3">Mind Travel <i class="fa fa-arrow-circle-right"></i></a>
 						<br>
 						<p>신희재</p>
 					</div>
@@ -39,12 +39,12 @@
 			</div>
 			<div class="col-sm-4">
 				<div class="album">
-					<img src="../assets/img/albums/album-blackpink.png" alt="cover" class="img-responsive">
+					<img src="http://localhost:8080/assets/img/albums/album-blackpink.png" alt="cover" class="img-responsive">
 					<div class="cd-mask">
 						<div class="center"></div>
 					</div>
 					<div class="info">
-						<a class="album-name" href="album-single.html">Lovesick Girls <i class="fa fa-arrow-circle-right"></i></a>
+						<a class="album-name" href="/album/5">Lovesick Girls <i class="fa fa-arrow-circle-right"></i></a>
 						<br>
 						<p>BLACKPINK</p>
 					</div>
@@ -52,12 +52,12 @@
 			</div>
 			<div class="col-sm-4">
 				<div class="album">
-					<img src="../assets/img/albums/album-showme.png" alt="cover" class="img-responsive">
+					<img src="http://localhost:8080/assets/img/albums/album-showme.png" alt="cover" class="img-responsive">
 					<div class="cd-mask">
 						<div class="center"></div>
 					</div>
 					<div class="info">
-						<a class="album-name" href="album-single.html">쇼미더머니 9 Episode 1 <i class="fa fa-arrow-circle-right"></i></a>
+						<a class="album-name" href="/album/2">쇼미더머니 9 Episode 1 <i class="fa fa-arrow-circle-right"></i></a>
 						<br>
 						<p>Various Artists</p>
 					</div>
@@ -65,12 +65,12 @@
 			</div>
 			<div class="col-sm-4">
 				<div class="album">
-					<img src="../assets/img/albums/album-bts.png" alt="cover" class="img-responsive">
+					<img src="http://localhost:8080/assets/img/albums/album-bts.png" alt="cover" class="img-responsive">
 					<div class="cd-mask">
 						<div class="center"></div>
 					</div>
 					<div class="info">
-						<a class="album-name" href="album-single.html">Dynamite (DayTime Version) <i class="fa fa-arrow-circle-right"></i></a>
+						<a class="album-name" href="/album/4">Dynamite (DayTime Version) <i class="fa fa-arrow-circle-right"></i></a>
 						<br>
 						<p>방탄소년단</p>
 					</div>
@@ -78,12 +78,12 @@
 			</div>
 			<div class="col-sm-4">
 				<div class="album">
-					<img src="../assets/img/albums/album-diving.png" alt="cover" class="img-responsive">
+					<img src="http://localhost:8080/assets/img/albums/album-diving.png" alt="cover" class="img-responsive">
 					<div class="cd-mask">
 						<div class="center"></div>
 					</div>
 					<div class="info">
-						<a class="album-name" href="album-single.html">DIVING<i class="fa fa-arrow-circle-right"></i></a>
+						<a class="album-name" href="/album/6">DIVING<i class="fa fa-arrow-circle-right"></i></a>
 						<br>
 						<p>KAMELEON</p>
 					</div>
@@ -91,72 +91,129 @@
 			</div>
 		</div>
 		<div class="button-container clearfix">
-			<a href="albums.html" class="button">View All <i class="fa fa-folder-open"></i></a>
+			<a href="/albumForm" class="button">View All <i class="fa fa-folder-open"></i></a>
 		</div>
 	</div>
 
 	<!-- Favorite music -->
-	<div id="songs" class="col-sm-12 album-container-single">
-		<div id="jquery_jplayer_2" class="jp-jplayer"></div>
-		<div id="jp_container_2" class="jp-audio single-album-player"
-			role="application" aria-label="media player">
-			<div class="jp-type-playlist">
-				<div class="jp-gui jp-interface">
-					<div class="jp-controls">
-						<div id="player-bars" class="bars-animation">
-							<div class="bar one"></div>
-							<div class="bar two"></div>
-							<div class="bar three"></div>
-							<div class="bar four"></div>
-							<div class="bar five"></div>
+	<div id="songs" class="container section artists">
+		<div class="category-head">
+			<h1>New <span class="colored">Song</span></h1>
+			<p>아직도 안 들어본 흑우 읎쩨 ?</p>
+		</div>
+	
+		<div id="songs" class="col-sm-12 album-container-single">
+			<div id="jquery_jplayer_2" class="jp-jplayer"></div>
+			<div id="jp_container_2" class="jp-audio single-album-player"
+				role="application" aria-label="media player">
+				<div class="jp-type-playlist">
+					<div class="jp-gui jp-interface">
+						<div class="jp-controls">
+							<div id="player-bars" class="bars-animation">
+								<div class="bar one"></div>
+								<div class="bar two"></div>
+								<div class="bar three"></div>
+								<div class="bar four"></div>
+								<div class="bar five"></div>
+							</div>
+							<!-- <button id="playlist-toggle"><i class="fa fa-bars"></i></button> -->
+							<button class="jp-previous" tabindex="0">
+								<i class="fa fa-step-backward"></i>
+							</button>
+							<button class="jp-play" tabindex="0">
+								<i class="fa fa-play"></i>
+							</button>
+							<button class="jp-next" tabindex="0">
+								<i class="fa fa-step-forward"></i>
+							</button>
+							<button class="jp-mute" tabindex="0">
+								<i class="fa fa-volume-up"></i>
+							</button>
+							<!-- <button class="jp-volume-max" role="button" tabindex="0"><i class="fa fa-volume-up"></i></button> -->
+							<div class="jp-volume-bar">
+								<div class="jp-volume-bar-value"></div>
+							</div>
 						</div>
-						<!-- <button id="playlist-toggle"><i class="fa fa-bars"></i></button> -->
-						<button class="jp-previous" tabindex="0">
-							<i class="fa fa-step-backward"></i>
-						</button>
-						<button class="jp-play" tabindex="0">
-							<i class="fa fa-play"></i>
-						</button>
-						<button class="jp-next" tabindex="0">
-							<i class="fa fa-step-forward"></i>
-						</button>
-						<button class="jp-mute" tabindex="0">
-							<i class="fa fa-volume-up"></i>
-						</button>
-						<!-- <button class="jp-volume-max" role="button" tabindex="0"><i class="fa fa-volume-up"></i></button> -->
-						<div class="jp-volume-bar">
-							<div class="jp-volume-bar-value"></div>
+						<!-- Display the track inside player -->
+						<div id="nowPlaying2">
+							<span class="artist-name"></span> 
+							<span class="track-name"></span>
+						</div>
+						<!-- #nowPlaying -->
+						<!-- Jp Progress -->
+						<div class="jp-progress">
+							<div class="jp-seek-bar">
+								<div class="jp-play-bar"></div>
+							</div>
+						</div>
+						<!-- Playlist -->
+						<div class="jp-playl">
+							
 						</div>
 					</div>
-					<!-- Display the track inside player -->
-					<div id="nowPlaying2">
-						<span class="artist-name"></span> 
-						<span class="track-name"></span>
-					</div>
-					<!-- #nowPlaying -->
-					<!-- Jp Progress -->
-					<div class="jp-progress">
-						<div class="jp-seek-bar">
-							<div class="jp-play-bar"></div>
-						</div>
-					</div>
-					<!-- Playlist -->
-					<div class="jp-playl">
-						
+					<div class="jp-no-solution">
+						<span>Update Required</span> To play the media you will need to
+						either update your browser to a recent version or update your <a
+							href="http://get.adobe.com/flashplayer/" target="_blank">Flash
+							plugin</a>
 					</div>
 				</div>
-				<div class="jp-no-solution">
-					<span>Update Required</span> To play the media you will need to
-					either update your browser to a recent version or update your <a
-						href="http://get.adobe.com/flashplayer/" target="_blank">Flash
-						plugin</a>
+			</div>
+	
+			<p></p>
+		</div>
+	</div>
+
+
+	<!-- Artists -->
+	<div id="collection" class="container section artists">
+		<div class="category-head">
+			<h1>Favorite <span class="colored">Collection</span></h1>
+			<p>마, 고마 니 입 맛대로 골라삐라</p>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-4 artist">
+					<div class="artist-wrapper">
+						<img src="http://localhost:8080/assets/img/artists/artist-1.jpg" alt="Artist" class="img-responsive">
+						<div class="mask">
+							<h1>POP</h1>
+							<p>Pop Collection</p>
+							<ul class="social">
+								<li><a href="#" class="fa fa-arrow-circle-right"></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-4 artist">
+					<div class="artist-wrapper">
+						<img src="http://localhost:8080/assets/img/artists/artist-3.jpg" alt="Artist" class="img-responsive">
+						<div class="mask">
+							<h1>ACOUSTIC</h1>
+							<p>Acoustic Collection</p>
+							<ul class="social">
+								<li><a href="#" class="fa fa-arrow-circle-right"></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-4 artist">
+					<div class="artist-wrapper">
+						<img src="http://localhost:8080/assets/img/artists/artist-2.jpg" alt="Artist" class="img-responsive">
+						<div class="mask">
+							<h1>BALLAD</h1>
+							<p>Ballad Collection</p>
+							<ul class="social">
+								<li><a href="#" class="fa fa-arrow-circle-right"></a></li>
+							</ul>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
-
-		<p></p>
 	</div>
-
+	
 
 	<!-- Video Gallery -->
 	<div id="videos"class="container section video-gallery">

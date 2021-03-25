@@ -153,6 +153,7 @@
 					<li><a  href="/mainForm">Home</a></li>
 					<li><a class="scrollTo" href="#albums">Albums</a></li>
 					<li><a class="scrollTo" href="#songs">Song</a></li>
+					<li><a class="scrollTo" href="#collection">collection</a></li>
 					<li><a class="scrollTo" href="#videos">Video</a></li>
 					<li class="has-submenu">
 						<a href="#">Pages <i class="fa fa-angle-down"></i></a>
@@ -164,8 +165,8 @@
 					</li>
 					<c:choose>
 						<c:when test="${empty principal}">
-							<li><a href="joinForm">join</a></li>
-							<li><a href="loginForm">login</a></li>
+							<li><a href="/joinForm">join</a></li>
+							<li><a href="/loginForm">login</a></li>
 						</c:when>
 						<c:otherwise>
 							<li><a href="/main/${principal.user.id}">info</a></li>

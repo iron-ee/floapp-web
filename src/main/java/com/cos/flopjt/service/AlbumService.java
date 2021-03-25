@@ -20,4 +20,9 @@ public class AlbumService {
 	public Page<Album> 전체찾기(Pageable pageable) {
 		return albumRepository.findAll(pageable);
 	}
+	
+	@Transactional
+	public Album 상세보기(int id) {
+		return albumRepository.findById(id).get();
+	}
 }

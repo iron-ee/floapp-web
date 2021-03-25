@@ -18,7 +18,7 @@
 							<div class="center"></div>
 						</div>
 						<div class="info">
-							<a class="album-name" href="/mainForm">${album.title} <i class="fa fa-arrow-circle-right"></i></a>
+							<a class="album-name" href="/album/${album.id}">${album.title} <i class="fa fa-arrow-circle-right"></i></a>
 							<br>
 							<p>${album.artist}</p>
 						</div>
