@@ -13,12 +13,12 @@
 		<div class="albums row">
 			<div class="col-sm-4">
 				<div class="album">
-					<img src="http://localhost:8080/assets/img/albums/album-iu-celebrity.png" alt="cover" class="img-responsive">
+					<img src="http://localhost:8080/assets/img/albums/album-iu-lilac.png" alt="cover" class="img-responsive">
 					<div class="cd-mask">
 						<div class="center"></div>
 					</div>
 					<div class="info">
-						<a class="album-name" href="/album/1">Celebrity <i class="fa fa-arrow-circle-right"></i></a>
+						<a class="album-name" href="/album/12">라일락 <i class="fa fa-arrow-circle-right"></i></a>
 						<br>
 						<p>아이유(IU)</p>
 					</div>
@@ -26,66 +26,66 @@
 			</div>
 			<div class="col-sm-4">
 				<div class="album">
-					<img src="http://localhost:8080/assets/img/albums/album-shin-mindtravel.png" alt="cover" class="img-responsive">
+					<img src="http://localhost:8080/assets/img/albums/album-jessi-howare.png" alt="cover" class="img-responsive">
 					<div class="cd-mask">
 						<div class="center"></div>
 					</div>
 					<div class="info">
-						<a class="album-name" href="/album/3">Mind Travel <i class="fa fa-arrow-circle-right"></i></a>
+						<a class="album-name" href="/album/21">어떤X <i class="fa fa-arrow-circle-right"></i></a>
 						<br>
-						<p>신희재</p>
+						<p>제시 (Jessi)</p>
 					</div>
 				</div>
 			</div>
 			<div class="col-sm-4">
 				<div class="album">
-					<img src="http://localhost:8080/assets/img/albums/album-blackpink-lovesickgirls.png" alt="cover" class="img-responsive">
+					<img src="http://localhost:8080/assets/img/albums/album-rose-ontheground.png" alt="cover" class="img-responsive">
 					<div class="cd-mask">
 						<div class="center"></div>
 					</div>
 					<div class="info">
-						<a class="album-name" href="/album/5">Lovesick Girls <i class="fa fa-arrow-circle-right"></i></a>
+						<a class="album-name" href="/album/11">On The Ground <i class="fa fa-arrow-circle-right"></i></a>
 						<br>
-						<p>BLACKPINK</p>
+						<p>ROSE (로제)</p>
 					</div>
 				</div>
 			</div>
 			<div class="col-sm-4">
 				<div class="album">
-					<img src="http://localhost:8080/assets/img/albums/album-showme-vvs.png" alt="cover" class="img-responsive">
+					<img src="http://localhost:8080/assets/img/albums/album-ashisland-melody.png" alt="cover" class="img-responsive">
 					<div class="cd-mask">
 						<div class="center"></div>
 					</div>
 					<div class="info">
-						<a class="album-name" href="/album/2">쇼미더머니 9 Episode 1 <i class="fa fa-arrow-circle-right"></i></a>
+						<a class="album-name" href="/album/22">멜로디<i class="fa fa-arrow-circle-right"></i></a>
 						<br>
-						<p>Various Artists</p>
+						<p>ASH ISLAND</p>
 					</div>
 				</div>
 			</div>
 			<div class="col-sm-4">
 				<div class="album">
-					<img src="http://localhost:8080/assets/img/albums/album-bts-dynamite.png" alt="cover" class="img-responsive">
+					<img src="http://localhost:8080/assets/img/albums/album-iu-celebrity.png" alt="cover" class="img-responsive">
 					<div class="cd-mask">
 						<div class="center"></div>
 					</div>
 					<div class="info">
-						<a class="album-name" href="/album/4">Dynamite (DayTime Version) <i class="fa fa-arrow-circle-right"></i></a>
+						<a class="album-name" href="/album/1">Celebrity<i class="fa fa-arrow-circle-right"></i></a>
 						<br>
-						<p>방탄소년단</p>
+						<p>아이유 (IU)</p>
 					</div>
 				</div>
 			</div>
 			<div class="col-sm-4">
 				<div class="album">
-					<img src="http://localhost:8080/assets/img/albums/album-kameleon-diving.png" alt="cover" class="img-responsive">
+					<img src="http://localhost:8080/assets/img/albums/album-yangdail-hurt.png" alt="cover" class="img-responsive">
 					<div class="cd-mask">
 						<div class="center"></div>
 					</div>
 					<div class="info">
-						<a class="album-name" href="/album/6">DIVING<i class="fa fa-arrow-circle-right"></i></a>
+						<a class="album-name" href="/album/17">아파<i class="fa fa-arrow-circle-right"></i></a>
 						<br>
-						<p>KAMELEON</p>
+						<p>양다일</p>
 					</div>
 				</div>
 			</div>
@@ -99,6 +99,7 @@
 	<div id="songs" class="container section artists">
 		<div class="category-head">
 			<h1>New <span class="colored">Song</span></h1>
+			<p>신곡 20</p>
 			<p>아직도 안 들어본 흑우 읎쩨 ?</p>
 		</div>
 	
@@ -148,7 +149,20 @@
 						</div>
 						<!-- Playlist -->
 						<div class="jp-playl">
-							
+							<c:forEach var="music" items="${musics}">
+								<ul>
+									<li id="newSong-${music.id}">
+										<div>
+											<a id="music-artist">${music.artist}  - </a>
+											<a id="music-title" onClick="musicppap(${music.mp3})" >${music.title}</a>
+											<button id="btn-url"  class="jp-next">
+												<i class="fa fa-play"></i>
+											</button>
+											<input type="hidden" id="music-url" value="${music.mp3}" />
+										</div>
+									</li>
+								</ul>
+							</c:forEach>
 						</div>
 					</div>
 					<div class="jp-no-solution">
@@ -174,38 +188,50 @@
 
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-4 artist">
+				<div class="col-sm-3 artist">
 					<div class="artist-wrapper">
-						<img src="http://localhost:8080/assets/img/artists/artist-1.jpg" alt="Artist" class="img-responsive">
+						<img src="http://localhost:8080/assets/img/category/category-pop.jpg" alt="Artist" class="img-responsive">
 						<div class="mask">
 							<h1>POP</h1>
 							<p>Pop Collection</p>
 							<ul class="social">
-								<li><a href="#" class="fa fa-arrow-circle-right"></a></li>
+								<li><a href="/category/pop" class="fa fa-arrow-circle-right"></a></li>
 							</ul>
 						</div>
 					</div>
 				</div>
-				<div class="col-sm-4 artist">
+				<div class="col-sm-3 artist">
 					<div class="artist-wrapper">
-						<img src="http://localhost:8080/assets/img/artists/artist-3.jpg" alt="Artist" class="img-responsive">
-						<div class="mask">
-							<h1>ACOUSTIC</h1>
-							<p>Acoustic Collection</p>
-							<ul class="social">
-								<li><a href="#" class="fa fa-arrow-circle-right"></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-4 artist">
-					<div class="artist-wrapper">
-						<img src="http://localhost:8080/assets/img/artists/artist-2.jpg" alt="Artist" class="img-responsive">
+						<img src="http://localhost:8080/assets/img/category/category-ballad.jpg" alt="Artist" class="img-responsive">
 						<div class="mask">
 							<h1>BALLAD</h1>
 							<p>Ballad Collection</p>
 							<ul class="social">
-								<li><a href="#" class="fa fa-arrow-circle-right"></a></li>
+								<li><a href="/category/ballad" class="fa fa-arrow-circle-right"></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-3 artist">
+					<div class="artist-wrapper">
+						<img src="http://localhost:8080/assets/img/category/category-dance.jpg" alt="Artist" class="img-responsive">
+						<div class="mask">
+							<h1>DANCE</h1>
+							<p>Dance Collection</p>
+							<ul class="social">
+								<li><a href="/category/dance" class="fa fa-arrow-circle-right"></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-3 artist">
+					<div class="artist-wrapper">
+						<img src="http://localhost:8080/assets/img/category/category-hiphop.jpg" alt="Artist" class="img-responsive">
+						<div class="mask">
+							<h1>HIPHOP</h1>
+							<p>HipHop Collection</p>
+							<ul class="social">
+								<li><a href="/category/hiphop" class="fa fa-arrow-circle-right"></a></li>
 							</ul>
 						</div>
 					</div>
@@ -248,135 +274,49 @@
 
 </div>
 
+<script>
+
+function musicppap(id){
+	let url = $("#btn-url").val();
+	console.log(id);
+	jQuery(document).ready(function($) {
 	
-	<script>
-	//<audio src="http://localhost:8080/assets/music/IU-Celebrity.mp3" volume="20%"></audio>
-	//fetch("/musicAll").then((response)=>response.json()).then((data)=>console.log(data))
+   		"use strict";
 
-	//musicList(music).then((data))=>console.log("data:", data)
-
-	//async function music(){
-		//await fetch("/musicAll").then((response)=>response.json()).then((data)=>console.log(data));
-	//};
-	//music()
-	//$("#btn-findAll").on("click", (e)=>{
-		//e.preventDefault();
-		//fetch("/musicAll").then((response)=>response.json()).then((data)=>console.log(data))
-	//});
-	let list = fetch("/musicAll").then((response)=>response.json());
-
-	var a = "IU";
-	var b = "Celebrity";
-	var c = "http://localhost:8080/assets/music/"+a+"-"+b+".mp3";
-	var plist = [{artist:a,title:b,mp3:c},{artist:a,title:b,mp3:c},{artist:a,title:b,mp3:c}];
-	console.log(plist);
-
-	$("#btn-findAll").on("click", (e)=>{
-		e.preventDefault();
-		let da = $("#title-url").val();
-		console.log(da);
-		jQuery(document).ready(function($) {
-		
-	   		"use strict";
-			
-	   		var myPlaylist = new jPlayerPlaylist({
-				jPlayer: "#jquery_jplayer_1",
-				cssSelectorAncestor: "#jp_container_1"
-			},[
-				{	
-					id:1,
-					artist: "IU",
-					title:"Celebrity",
-					mp3:"http://localhost:8080/assets/music/"+da+".mp3",
-				},
-				{
-					id:2,
-					artist: "BTS",
-					title:"Dynamite",
-					mp3:"http://localhost:8080/assets/music/"+da+".mp3",
-				}
-			],{
-				playlistOptions: {
-				    enableRemoveControls: true
-				},
-				swfPath: "http://localhost:8080/assets/jplayer/jplayer",
-				supplied: "mp3",
-				wmode: "window",
-				useStateClassSkin: true,
-				autoBlur: false,
-				smoothPlayBar: true,
-				keyEnabled: true,
-			});
-
-			// Show The Current Track !!
-			$("#jquery_jplayer_1").on(
-			    $.jPlayer.event.ready + ' ' + $.jPlayer.event.play,
-			   	function(event){
-			       	var current = myPlaylist.current;
-			       	console.log(current);
-				    var playlist = myPlaylist.playlist;
-				    console.log(playlist);       
-				    $.each(playlist, function (index, obj) {
-				        if (index == current) {
-				            $("#nowPlaying .artist-name").html(obj.artist + " - ");
-				            $("#nowPlaying .track-name").html(obj.title);
-				        }
-				    });
-			   	}
-			);
-
-	   		
-			var myPlaylist2 = new jPlayerPlaylist({
-				jPlayer: "#jquery_jplayer_2",
-				cssSelectorAncestor: "#jp_container_2"
-			}, [
-				{	
-					id:1,
-					artist: "IU",
-					title:"Celebrity",
-					mp3:"http://localhost:8080/assets/music/IU-Celebrity.mp3",
-				},
-				{
-					id:2,
-					artist: "BTS",
-					title:"Dynamite",
-					mp3:"http://localhost:8080/assets/music/BTS-Dynamite.mp3",
-				}
-			], {
-				playlistOptions: {
-				    enableRemoveControls: true
-				},
-				swfPath: "http://localhost:8080/assets/jplayer/jplayer",
-				supplied: "mp3",
-				wmode: "window",
-				useStateClassSkin: true,
-				autoBlur: false,
-				smoothPlayBar: true,
-				keyEnabled: true,
-			});
-			
-			// Show The Current Track !!
-			$("#jquery_jplayer_2").on(
-			    $.jPlayer.event.ready + ' ' + $.jPlayer.event.play,
-			   	function(event){
-			       	var current = myPlaylist2.current;
-				    var playlist = myPlaylist2.playlist;       
-				    $.each(playlist, function (index, obj) {
-				        if (index == current) {
-				            $("#nowPlaying2 .artist-name").html(obj.artist + " - ");
-				            $("#nowPlaying2 .track-name").html(obj.title);
-				        }
-				    });
-			   	}
-			);
-			$("#jquery_jplayer_2").on($.jPlayer.event.play, function(event) {
-			       $('#player-bars').addClass('animated');
-			   	}
-			);
-
+		var myPlaylist2 = new jPlayerPlaylist({
+			jPlayer: "#jquery_jplayer_2",
+			cssSelectorAncestor: "#jp_container_2"
+		}, [
+			{	
+				mp3:"http://localhost:8080/assets/music/"+(id+1)+".mp3",
+			},
+			{	
+				mp3:"http://localhost:8080/assets/music/"+id+".mp3",
+			},
+			{	
+				mp3:"http://localhost:8080/assets/music/"+(id-1)+".mp3",
+			},
+		], {
+			playlistOptions: {
+			    enableRemoveControls: true
+			},
+			swfPath: "http://localhost:8080/assets/jplayer/jplayer",
+			supplied: "mp3",
+			wmode: "window",
+			useStateClassSkin: true,
+			autoBlur: false,
+			smoothPlayBar: true,
+			keyEnabled: true,
 		});
+		
+		
+		$("#jquery_jplayer_2").on($.jPlayer.event.play, function(event) {
+		       $('#player-bars').addClass('animated');
+		   	}
+		);
+
 	});
-	
-	</script>
+};
+</script>
 
 <%@ include file="../layout/footer.jsp" %>

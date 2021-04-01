@@ -159,7 +159,7 @@
 						<a href="#">Pages <i class="fa fa-angle-down"></i></a>
 						<ul class="submenu">							
 							<li><a href="/albumForm">Albums Page</a></li>							
-							<li><a href="blog.html">Blog Page</a></li>							
+							<li><a href="/categoryForm">Category Page</a></li>							
 							<li><a href="/videoForm">Video Gallery</a></li>					
 						</ul>
 					</li>

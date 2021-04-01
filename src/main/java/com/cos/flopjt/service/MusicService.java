@@ -24,14 +24,43 @@ public class MusicService {
 		return musicEntity;
 	}
 	
-	@Transactional
+	@Transactional(readOnly = true)
 	public Page<Music> 뮤직페이징(Pageable pageable) {
 		return musicRepository.findAll(pageable);
 	}
 	
-	@Transactional
+	@Transactional(readOnly = true)
 	public Music 상세보기(int id) {
 		return musicRepository.findById(id).get();
 	}
 	
+	@Transactional(readOnly = true)
+	public List<Music> 최신음악() {
+		return musicRepository.newSong();
+	}
+	
+	@Transactional(readOnly = true)
+	public Page<Music> 발라드(Pageable pageable) {
+		return musicRepository.ballad(pageable);
+	}
+	
+	@Transactional(readOnly = true)
+	public Page<Music> 댄스(Pageable pageable) {
+		return musicRepository.dance(pageable);
+	}
+	
+	@Transactional(readOnly = true)
+	public Page<Music> 팝(Pageable pageable) {
+		return musicRepository.pop(pageable);
+	}
+	
+	@Transactional(readOnly = true)
+	public Page<Music> 힙합(Pageable pageable) {
+		return musicRepository.hiphop(pageable);
+	}
+	
+	@Transactional(readOnly = true)
+	public Page<Music> 트로트(Pageable pageable) {
+		return musicRepository.trot(pageable);
+	}
 }

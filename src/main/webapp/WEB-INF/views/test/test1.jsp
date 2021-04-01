@@ -96,31 +96,8 @@
 	
 	
 	<script>
-	//<audio src="http://localhost:8080/assets/music/IU-Celebrity.mp3" volume="20%"></audio>
-	//fetch("/musicAll").then((response)=>response.json()).then((data)=>console.log(data))
-
-	//musicList(music).then((data))=>console.log("data:", data)
-
-	//async function music(){
-		//await fetch("/musicAll").then((response)=>response.json()).then((data)=>console.log(data));
-	//};
-	//music()
-	//$("#btn-findAll").on("click", (e)=>{
-		//e.preventDefault();
-		//fetch("/musicAll").then((response)=>response.json()).then((data)=>console.log(data))
-	//});
-	let list = fetch("/musicAll").then((response)=>response.json());
-
-	var a = "IU";
-	var b = "Celebrity";
-	var c = "http://localhost:8080/assets/music/"+a+"-"+b+".mp3";
-	var plist = [{artist:a,title:b,mp3:c},{artist:a,title:b,mp3:c},{artist:a,title:b,mp3:c}];
-	console.log(plist);
 
 	function musicppap(id){
-		//let arti = $("#music-artist").val();
-		//let tit = $("#music-title").val();
-		//const url = $("#music-url").val();
 		let url = $("#btn-url").val();
 		console.log(id);
 		jQuery(document).ready(function($) {
