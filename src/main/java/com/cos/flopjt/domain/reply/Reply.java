@@ -12,7 +12,7 @@ import javax.persistence.ManyToOne;
 
 import org.hibernate.annotations.CreationTimestamp;
 
-import com.cos.flopjt.domain.album.Album;
+import com.cos.flopjt.domain.music.Music;
 import com.cos.flopjt.domain.user.User;
 
 import lombok.AllArgsConstructor;
@@ -41,8 +41,8 @@ public class Reply {
 	
 	// 앨범
 	@ManyToOne
-	@JoinColumn(name="albumId")
-	private Album album;
+	@JoinColumn(name="musicId")
+	private Music music;
 	
 	@CreationTimestamp
 	private Timestamp createDate;

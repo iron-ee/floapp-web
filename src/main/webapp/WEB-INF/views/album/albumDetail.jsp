@@ -10,14 +10,14 @@
 			<div class="col-sm-4">
 				<div class="album-single-info">
 					<div class="img-container">
-						<img src="${album.imgUrl}" alt="Cover" class="img-responsive">
-						<a href="#" class="buy"><span class="price">Like</span> Add List <i class="fa fa-shopping-cart"></i></a>
+						<img src="${music.imgUrl}" alt="Cover" class="img-responsive">
+						<a id="list-add" class="buy"><span class="price">Like</span> Add List <i class="fa fa-shopping-cart"></i><input type="hidden" id="musicId-list" value="${music.id}" /></a>
 					</div>
-					<h2><i class="fa fa-dot-circle-o"></i> ${album.title}</h2>
+					<h2><i class="fa fa-dot-circle-o"></i> ${music.title}</h2>
 					<ul>
-						<li><span class="colored">Artist:</span> ${album.artist}</li>
-						<li><span class="colored">Release Date:</span> 15 SEP 2016</li>
-						<li><span class="colored">Genre:</span>  R&amp;B, DANCE, POP</li>
+						<li><span class="colored">Artist:</span> ${music.artist}</li>
+						<li><span class="colored">Release Date:</span> ${music.releaseDate}</li>
+						<li><span class="colored">Genre:</span> ${music.category}</li>
 						<li><span class="colored">Produced By:</span> Music Production INC</li>
 					</ul>
 				</div>
@@ -58,9 +58,18 @@
 								</div>
 							</div>
 							<!-- Playlist -->
-							<div class="jp-playlist">
+							<div class="jp-playl">
 								<ul>
-									<li>&nbsp;</li>
+									<li id="music-${music.id}">
+									<div>
+										<a id="music-artist">${music.artist}  - </a>
+										<a id="music-title" onClick="musicppap(${music.mp3})" >${music.title}</a>
+										<button id="btn-url"  class="jp-next">
+											<i class="fa fa-play"></i>
+										</button>
+										<input type="hidden" id="music-url" value="${music.mp3}" />
+									</div>
+								</li>
 								</ul>
 							</div>
 						</div>
@@ -86,7 +95,7 @@
 				<h3>Leave a comment</h3>
 
 				<form name="contact" id="comment-form">
-					<input type="hidden" id="albumId" value="${album.id}" />
+					<input type="hidden" id="musicId" value="${music.id}" />
 					<div class="field">
 						<p>Type a message <span class="colored">*</span></p>
 						<textarea id="reply-content" cols="15" rows="5" class="required" placeholder="Message..." title="Please type a message." name="message"></textarea>
@@ -98,7 +107,7 @@
 				</form>
 
 				<!-- Comment  -->
-				<c:forEach var="reply" items="${album.replys}">
+				<c:forEach var="reply" items="${music.replys}">
 					<div id="reply-${reply.id}" class="comment">
 						<div class="avatar">
 							<img src="http://localhost:8080/assets/img/blog/avatar-1.jpg" alt="Avatar">
@@ -118,10 +127,35 @@
     
     
     <script>
+	$("#list-add").on("click", (e)=>{
+		e.preventDefault();
+		let dataId = {
+				musicId: $("#musicId-list").val(),
+				};
+		console.log(dataId);
+		$.ajax({
+			type:"POST",
+			url:"/listAdd",
+			data:JSON.stringify(dataId),
+			contentType:"application/json; charset=utf-8",
+			dataType:"json"
+		}).done((res)=>{
+			console.log(res);
+			if(res.statusCode === 1){
+				alert("리스트에 추가되었습니다.")
+			}else{
+				alert("리스트 추가에 실패하였습니다.")
+			}
+		});
+		
+	});
+	</script>
+    
+    <script>
 	$("#btn-reply-save").on("click", (e)=>{
 		e.preventDefault();
 		let data = {
-				albumId: $("#albumId").val(),
+				musicId: $("#musicId").val(),
 				content: $("#reply-content").val()
 				};
 		console.log(data);
@@ -160,5 +194,45 @@
 	}
 	</script>
     
+    <script>
+    function musicppap(id){
+		let url = $("#btn-url").val();
+		console.log(id);
+		jQuery(document).ready(function($) {
+		
+	   		"use strict";
+
+			var myPlaylist2 = new jPlayerPlaylist({
+				jPlayer: "#jquery_jplayer_2",
+				cssSelectorAncestor: "#jp_container_2"
+			}, [
+				{	
+					mp3:"http://localhost:8080/assets/music/"+id+".mp3",
+				},
+				{	
+					mp3:"http://localhost:8080/assets/music/"+id+".mp3",
+				},
+			], {
+				playlistOptions: {
+				    enableRemoveControls: true
+				},
+				swfPath: "http://localhost:8080/assets/jplayer/jplayer",
+				supplied: "mp3",
+				wmode: "window",
+				useStateClassSkin: true,
+				autoBlur: false,
+				smoothPlayBar: true,
+				keyEnabled: true,
+			});
+			
+			
+			$("#jquery_jplayer_2").on($.jPlayer.event.play, function(event) {
+			       $('#player-bars').addClass('animated');
+			   	}
+			);
+
+		});
+	};
+	</script>
     
 <%@ include file="../layout/footer.jsp" %>

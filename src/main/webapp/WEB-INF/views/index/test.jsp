@@ -13,7 +13,7 @@
 		<div class="albums row">
 			<div class="col-sm-4">
 				<div class="album">
-					<img src="http://localhost:8080/assets/img/albums/album-iu.png" alt="cover" class="img-responsive">
+					<img src="http://localhost:8080/assets/img/albums/album-iu-celebrity.png" alt="cover" class="img-responsive">
 					<div class="cd-mask">
 						<div class="center"></div>
 					</div>
@@ -26,7 +26,7 @@
 			</div>
 			<div class="col-sm-4">
 				<div class="album">
-					<img src="http://localhost:8080/assets/img/albums/album-shin.png" alt="cover" class="img-responsive">
+					<img src="http://localhost:8080/assets/img/albums/album-shin-mindtravel.png" alt="cover" class="img-responsive">
 					<div class="cd-mask">
 						<div class="center"></div>
 					</div>
@@ -39,7 +39,7 @@
 			</div>
 			<div class="col-sm-4">
 				<div class="album">
-					<img src="http://localhost:8080/assets/img/albums/album-blackpink.png" alt="cover" class="img-responsive">
+					<img src="http://localhost:8080/assets/img/albums/album-blackpink-lovesickgirls.png" alt="cover" class="img-responsive">
 					<div class="cd-mask">
 						<div class="center"></div>
 					</div>
@@ -52,7 +52,7 @@
 			</div>
 			<div class="col-sm-4">
 				<div class="album">
-					<img src="http://localhost:8080/assets/img/albums/album-showme.png" alt="cover" class="img-responsive">
+					<img src="http://localhost:8080/assets/img/albums/album-showme-vvs.png" alt="cover" class="img-responsive">
 					<div class="cd-mask">
 						<div class="center"></div>
 					</div>
@@ -65,7 +65,7 @@
 			</div>
 			<div class="col-sm-4">
 				<div class="album">
-					<img src="http://localhost:8080/assets/img/albums/album-bts.png" alt="cover" class="img-responsive">
+					<img src="http://localhost:8080/assets/img/albums/album-bts-dynamite.png" alt="cover" class="img-responsive">
 					<div class="cd-mask">
 						<div class="center"></div>
 					</div>
@@ -78,7 +78,7 @@
 			</div>
 			<div class="col-sm-4">
 				<div class="album">
-					<img src="http://localhost:8080/assets/img/albums/album-diving.png" alt="cover" class="img-responsive">
+					<img src="http://localhost:8080/assets/img/albums/album-kameleon-diving.png" alt="cover" class="img-responsive">
 					<div class="cd-mask">
 						<div class="center"></div>
 					</div>

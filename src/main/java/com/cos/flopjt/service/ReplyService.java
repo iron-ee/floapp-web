@@ -3,8 +3,8 @@ package com.cos.flopjt.service;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.cos.flopjt.domain.album.Album;
-import com.cos.flopjt.domain.album.AlbumRepository;
+import com.cos.flopjt.domain.music.Music;
+import com.cos.flopjt.domain.music.MusicRepository;
 import com.cos.flopjt.domain.reply.Reply;
 import com.cos.flopjt.domain.reply.ReplyRepository;
 import com.cos.flopjt.domain.user.User;
@@ -17,13 +17,13 @@ import lombok.RequiredArgsConstructor;
 public class ReplyService {
 
 	private final ReplyRepository replyRepository;
-	private final AlbumRepository albumRepository;
+	private final MusicRepository musicRepository;
 	
 	@Transactional
 	public Reply 댓글쓰기(ReplySaveReqDto replySaveReqDto, User user) {
-		Album albumEntity = albumRepository.findById(replySaveReqDto.getAlbumId()).get();
+		Music albumEntity = musicRepository.findById(replySaveReqDto.getMusicId()).get();
 		Reply reply = replySaveReqDto.toEntity();
-		reply.setAlbum(albumEntity);
+		reply.setMusic(albumEntity);
 		reply.setUser(user);
 		Reply replyEntity = replyRepository.save(reply);
 		

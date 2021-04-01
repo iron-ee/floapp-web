@@ -20,7 +20,7 @@
 	<link rel="stylesheet" type="text/css" href="http://localhost:8080/assets/css/style.css" />
 	    <!-- ======== JavaScript ======== -->
 	<script type="text/javascript" src="http://localhost:8080/assets/js/jquery-1.11.1.min.js"></script>
-	<script type="text/javascript" src="http://localhost:8080/assets/js/smooth-scroll.js"></script>
+
 	<script type="text/javascript" src="http://localhost:8080/assets/js/bootstrap.js"></script>
 	<script type="text/javascript" src="http://localhost:8080/assets/js/jquery.fitvids.js"></script>
 	<script type="text/javascript" src="http://localhost:8080/assets/owl-carousel/owl.carousel.min.js"></script>

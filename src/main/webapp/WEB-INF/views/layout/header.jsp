@@ -169,7 +169,8 @@
 							<li><a href="/loginForm">login</a></li>
 						</c:when>
 						<c:otherwise>
-							<li><a href="/main/${principal.user.id}">info</a></li>
+							<li><a href="/list/${principal.user.id}">list</a></li>
+							<li><a href="/user/${principal.user.id}">info</a></li>
 							<li><a href="/logout">logout</a></li>
 						</c:otherwise>
 					</c:choose>

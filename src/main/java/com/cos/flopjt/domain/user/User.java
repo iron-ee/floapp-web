@@ -17,7 +17,7 @@ import javax.persistence.OrderBy;
 
 import org.hibernate.annotations.CreationTimestamp;
 
-import com.cos.flopjt.domain.music.Music;
+import com.cos.flopjt.domain.playlist.Playlist;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
@@ -45,6 +45,7 @@ public class User {
 	@Column(nullable = true, length = 100)
 	private String nickname;
 	
+	@Column(nullable = true)
 	private String email;
 	
 	
@@ -54,7 +55,7 @@ public class User {
 	@OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties({"user"})
 	@OrderBy("id desc")
-	private List<Music> musics;
+	private List<Playlist> plist;
 	
 	@CreationTimestamp
 	private Timestamp createDate;

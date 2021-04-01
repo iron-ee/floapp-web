@@ -7,7 +7,7 @@ import lombok.Data;
 @Data
 public class ReplySaveReqDto {
 
-	private Integer albumId;
+	private Integer musicId;
 	
 	private String content;
 	

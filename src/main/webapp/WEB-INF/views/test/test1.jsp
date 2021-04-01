@@ -4,97 +4,16 @@
 
 <div class="container">
 	<!-- Featured Albums -->
-	<div id="albums" class="container section featured-albums-home">
+	<div id="playlist" class="container section featured-albums-home">
 		<div class="category-head">
-			<h1>New <span class="colored">Albums</span></h1>
-			<p>누구보다 빠르게 남들과는 다르게 색다르게 리듬을 타는 비트위에 나그네.</p>
+			<h1>나만 알고싶은, <span class="colored">PlayList</span></h1>
+			<p>1일 1깡, 1일 3롤린</p>
 		</div>
 
-		<div class="albums row">
-			<div class="col-sm-4">
-				<div class="album">
-					<img src="../assets/img/albums/album-iu.png" alt="cover" class="img-responsive">
-					<div class="cd-mask">
-						<div class="center"></div>
-					</div>
-					<div class="info">
-						<a class="album-name" href="album-single.html">Celebrity <i class="fa fa-arrow-circle-right"></i></a>
-						<br>
-						<p>아이유(IU)</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-4">
-				<div class="album">
-					<img src="../assets/img/albums/album-shin.png" alt="cover" class="img-responsive">
-					<div class="cd-mask">
-						<div class="center"></div>
-					</div>
-					<div class="info">
-						<a class="album-name" href="album-single.html">Mind Travel <i class="fa fa-arrow-circle-right"></i></a>
-						<br>
-						<p>신희재</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-4">
-				<div class="album">
-					<img src="../assets/img/albums/album-blackpink.png" alt="cover" class="img-responsive">
-					<div class="cd-mask">
-						<div class="center"></div>
-					</div>
-					<div class="info">
-						<a class="album-name" href="album-single.html">Lovesick Girls <i class="fa fa-arrow-circle-right"></i></a>
-						<br>
-						<p>BLACKPINK</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-4">
-				<div class="album">
-					<img src="../assets/img/albums/album-showme.png" alt="cover" class="img-responsive">
-					<div class="cd-mask">
-						<div class="center"></div>
-					</div>
-					<div class="info">
-						<a class="album-name" href="album-single.html">쇼미더머니 9 Episode 1 <i class="fa fa-arrow-circle-right"></i></a>
-						<br>
-						<p>Various Artists</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-4">
-				<div class="album">
-					<img src="../assets/img/albums/album-bts.png" alt="cover" class="img-responsive">
-					<div class="cd-mask">
-						<div class="center"></div>
-					</div>
-					<div class="info">
-						<a class="album-name" href="album-single.html">Dynamite (DayTime Version) <i class="fa fa-arrow-circle-right"></i></a>
-						<br>
-						<p>방탄소년단</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-4">
-				<div class="album">
-					<img src="../assets/img/albums/album-diving.png" alt="cover" class="img-responsive">
-					<div class="cd-mask">
-						<div class="center"></div>
-					</div>
-					<div class="info">
-						<a class="album-name" href="album-single.html">DIVING<i class="fa fa-arrow-circle-right"></i></a>
-						<br>
-						<p>KAMELEON</p>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="button-container clearfix">
-			<a href="albums.html" class="button">View All <i class="fa fa-folder-open"></i></a>
-		</div>
-	</div>
-
+	<br/>
+	<br/>
+	<br/>
+		
 	<!-- Favorite music -->
 	<div id="songs" class="col-sm-12 album-container-single">
 		<div id="jquery_jplayer_2" class="jp-jplayer"></div>
@@ -142,16 +61,16 @@
 					</div>
 					<!-- Playlist -->
 					<div class="jp-playl">
-						<c:forEach var="music" items="${user.musics}">
+						<c:forEach var="playlist" items="${user.plist}">
 							<ul>
-								<li id="music-${music.id}">
+								<li id="list-${playlist.id}">
 									<div>
-										<a id="music-artist">${music.artist}  - </a>
-										<a id="music-title" onClick="musicppap(${music.mp3})" >${music.title}</a>
+										<a id="music-artist">${playlist.music.artist}  - </a>
+										<a id="music-title" onClick="musicppap(${playlist.music.mp3})" >${playlist.music.title}</a>
 										<button id="btn-url"  class="jp-next">
 											<i class="fa fa-play"></i>
 										</button>
-										<input type="hidden" id="music-url" value="${music.mp3}" />
+										<input type="hidden" id="music-url" value="${playlist.music.mp3}" />
 									</div>
 								</li>
 							</ul>
@@ -171,41 +90,10 @@
 
 		<p></p>
 	</div>
-
-
-	<!-- Video Gallery -->
-	<div id="videos" class="container section video-gallery">
-		<div class="category-head">
-			<h1>New <span class="colored">Video</span></h1>
-			<p> 아직도 안 본 흑우 읎제~</p>
-		</div>
-		
-		<div class="videos-container row">
-			<div class="col-sm-6 embed-video">
-				<iframe src="https://youtube.com/embed/0-q1KafFCLU" width="500" height="281" allowfullscreen></iframe>
-				<div>[MV] IU(아이유) _ Celebrity</div>
-			</div>
-			<div class="col-sm-6 embed-video">
-				<iframe src="https://youtube.com/embed/gdZLi9oWNZg" width="500" height="281" allowfullscreen></iframe>
-				<div>BTS (방탄소년단) 'Dynamite' Official MV</div>
-			</div>
-			<div class="col-sm-6 embed-video">
-				<iframe src="https://youtube.com/embed/HYfkUCKiVGw" width="500" height="281" allowfullscreen></iframe>
-				<div>[ENG] SMTM9 [6회/풀버전] 'VVS' - 머쉬베놈 X 미란이 @음원 배틀 Full ver. EP.6 201120</div>
-			</div>
-			<div class="col-sm-6 embed-video">
-				<iframe src="https://youtube.com/embed/dyRsYk0LyA8" width="500" height="281" allowfullscreen></iframe>
-				<div>BLACKPINK – ‘Lovesick Girls’ M/V</div>
-			</div>
-		</div>
-
-		<div class="button-container">
-			<a class="button">View Gallery <i class="fa fa-youtube-play"></i></a>
-		</div>
-	</div>
-
+</div>
 </div>
 
+	
 	
 	<script>
 	//<audio src="http://localhost:8080/assets/music/IU-Celebrity.mp3" volume="20%"></audio>
@@ -244,16 +132,13 @@
 				cssSelectorAncestor: "#jp_container_2"
 			}, [
 				{	
-					id:1,
-					artist: "IU",
-					title:"Celebrity",
+					mp3:"http://localhost:8080/assets/music/"+(id+1)+".mp3",
+				},
+				{	
 					mp3:"http://localhost:8080/assets/music/"+id+".mp3",
 				},
 				{	
-					id:1,
-					artist: "IU",
-					title:"Celebrity",
-					mp3:"http://localhost:8080/assets/music/"+id+".mp3",
+					mp3:"http://localhost:8080/assets/music/"+(id-1)+".mp3",
 				},
 			], {
 				playlistOptions: {
