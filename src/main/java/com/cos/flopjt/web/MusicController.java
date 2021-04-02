@@ -30,55 +30,60 @@ public class MusicController {
 	public String albumForm(Model model, @PageableDefault(sort = "id", direction = Sort.Direction.DESC, size = 6)Pageable pageable) {
 		Page<Music> musics = musicService.뮤직페이징(pageable);
 		model.addAttribute("musics", musics);
-		return "album/albumForm";
+		return "music/albumForm";
 	}
 	
 	@GetMapping("/album/{id}")
 	public String Detail(@PathVariable int id, Model model) {
 		Music albumEntity = musicService.상세보기(id);
 		model.addAttribute("music", albumEntity);
-		return "album/albumDetail";
+		return "music/albumDetail";
 	}
+	
 	
 	@GetMapping("/categoryForm")
 	public String categoryForm() {
 		return "category/categoryForm";
 	}
-	
-	
-	
 	@GetMapping("/category/ballad")
 	public String cBallad(Model model, @PageableDefault(sort = "id", direction = Sort.Direction.DESC, size = 4)Pageable pageable) {
 		Page<Music> musics = musicService.발라드(pageable);	
 		model.addAttribute("musics", musics);
 		return "category/balladForm";
-	}
-	
+	}	
 	@GetMapping("/category/dance")
 	public String cDance(Model model, @PageableDefault(sort = "id", direction = Sort.Direction.DESC, size = 4)Pageable pageable) {
 		Page<Music> musics = musicService.댄스(pageable);	
 		model.addAttribute("musics", musics);
 		return "category/danceForm";
-	}
-	
+	}	
 	@GetMapping("/category/pop")
 	public String cPop(Model model, @PageableDefault(sort = "id", direction = Sort.Direction.DESC, size = 4)Pageable pageable) {
 		Page<Music> musics = musicService.팝(pageable);	
 		model.addAttribute("musics", musics);
 		return "category/popForm";
 	}
-	
 	@GetMapping("/category/hiphop")
 	public String cHiphop(Model model, @PageableDefault(sort = "id", direction = Sort.Direction.DESC, size = 4)Pageable pageable) {
 		Page<Music> musics = musicService.힙합(pageable);	
 		model.addAttribute("musics", musics);
 		return "category/hiphopForm";
-	}
-	
+	}	
 	@GetMapping("/category/trot")
 	public String cTrot(Model model, @PageableDefault(sort = "id", direction = Sort.Direction.DESC, size = 6)Pageable pageable) {
 		Page<Music> musics = musicService.트로트(pageable);	
 		model.addAttribute("musics", musics);
 		return "category/trotForm";
+	}
+	
+	@GetMapping("/search")
+	public String search(String keyword, Model model, @PageableDefault(sort = "id", direction = Sort.Direction.DESC, size = 4)Pageable pageable) {
+		System.out.println("키워드 : "+keyword);
+		Page<Music> musics = musicService.노래검색(keyword, pageable);
+		model.addAttribute("musics", musics);
+		model.addAttribute("keyword", keyword);
+		
+		return "music/searchForm";
+		
 	}
 }

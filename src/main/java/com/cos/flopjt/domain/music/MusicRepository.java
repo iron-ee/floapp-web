@@ -9,11 +9,12 @@ import org.springframework.data.jpa.repository.Query;
 
 public interface MusicRepository extends JpaRepository<Music, Integer>{
 
+	// 신곡 20
 	@Query(value = "select * from music order by releaseDate desc limit 20", nativeQuery = true)
 	List<Music> newSong();
 	
 	
-	
+	// 카테고리
 	@Query(value = "select * from music where category = 'BALLAD' order by releaseDate desc", nativeQuery = true)
 	Page<Music> ballad(Pageable pageable);
 	
@@ -28,4 +29,10 @@ public interface MusicRepository extends JpaRepository<Music, Integer>{
 	
 	@Query(value = "select * from music where category = 'TROT' order by releaseDate desc", nativeQuery = true)
 	Page<Music> trot(Pageable pageable);
+	
+	
+	// 검색
+	@Query(value = "select * from music where artist like %:keyword% or title like %:keyword%", nativeQuery = true)
+	Page<Music> searchMusic(String keyword, Pageable pageable);
+
 }

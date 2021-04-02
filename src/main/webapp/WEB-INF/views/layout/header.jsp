@@ -181,8 +181,8 @@
 
 		<div class="search-container">
 			<i id="search-button" class="fa fa-search search-button"></i>
-			<form  id="search-nav" class="search-nav" method="post" action="#">
-				<input type="text" class="search-input" placeholder="Search..">
+			<form  id="search-nav" class="search-nav" method="GET" action="/search">
+				<input type="text" class="search-input" placeholder="Search.." name="keyword">
 				<button type="submit"><i class="fa fa-search"></i></button>
 			</form>
 		</div>

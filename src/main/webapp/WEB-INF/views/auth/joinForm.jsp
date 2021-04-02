@@ -46,7 +46,7 @@
 		</div>
 
 		<div class="container">
-			<form action="join" method="post" name="contact" id="contact-form">
+			<form action="/join" method="post" name="contact" id="contact-form">
 				<div class="field">
 					<p>ID (Email 형식) <span class="colored">*</span></p>
 					<input name="username" type="email" class="required" title="Please type your ID" placeholder="Email ...">
@@ -80,7 +80,7 @@
 		</div>
 		
 		<div class="button-container">
-			<form action="loginForm" method="get">
+			<form action="/loginForm" method="get">
 				<button class="button"> 소셜 회원가입 </button>
 			</form>
 		</div>
