@@ -67,41 +67,6 @@ jQuery(document).ready(function($) {
         $('#jp_container_1').find(".jp-playlist").fadeToggle(100);
     });
 
-   // === Sidebar Instagram Widget ===
-    var feedSidebar = new Instafeed({
-        get: 'user',
-        userId: 2270734710, // your user id
-        accessToken: '2270734710.38c1284.f5b72cce5cc54bbc8dbacb7d3436e1ce', // your access token
-        sortBy: 'most-liked',
-        template: '<li><a href="{{link}}" target="_blank"><img class="img-responsive" src="{{image}}" /></a></li>',
-        target: 'instagram-sidebar-widget',
-        limit: 9,
-        resolution: 'low_resolution'
-    });
-    if ($('#instagram-sidebar-widget').length>0) {
-        feedSidebar.run();
-    }
-
-    // === Footer Instagram Slider ===
-    var feedFooter = new Instafeed({
-        get: 'user',
-        userId: 2270734710, // your user id
-        accessToken: '2270734710.38c1284.f5b72cce5cc54bbc8dbacb7d3436e1ce', // your access token
-        sortBy: 'most-liked',
-        template: '<div><a href="{{link}}" target="_blank"><img class="img-responsive" src="{{image}}" /></a></div>',
-        target: 'instagram-carousel',
-        limit: 9,
-        resolution: 'low_resolution',
-        after: function () {
-            $('#instagram-carousel').owlCarousel({
-                items: 6,
-                navigation: false,
-                pagination: false,
-                autoPlay: 4000
-            });
-        }
-    });
-    feedFooter.run();
     
     // === Home Slider ===
     $('#home-slider').owlCarousel({

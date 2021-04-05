@@ -25,8 +25,6 @@
 	<script type="text/javascript" src="http://localhost:8080/assets/js/jquery.fitvids.js"></script>
 	<script type="text/javascript" src="http://localhost:8080/assets/owl-carousel/owl.carousel.min.js"></script>
 	<script type="text/javascript" src="http://localhost:8080/assets/lightGallery/js/lightgallery.min.js"></script>
-	<script type="text/javascript" src="http://localhost:8080/assets/js/ajax.gallery.js"></script>
-	<script type="text/javascript" src="http://localhost:8080/assets/js/instafeed.min.js"></script>
 	<script type="text/javascript" src="http://localhost:8080/assets/js/countdown.js"></script>
 	<script type="text/javascript" src="http://localhost:8080/assets/js/jquery.validate.min.js"></script>
 	<!-- RS5.0 Core JS Files -->

@@ -9,5 +9,5 @@ public class FlopjtApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(FlopjtApplication.class, args);
 	}
-
+	
 }

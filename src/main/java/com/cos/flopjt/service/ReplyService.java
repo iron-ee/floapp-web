@@ -3,12 +3,12 @@ package com.cos.flopjt.service;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.cos.flopjt.domain.music.Music;
-import com.cos.flopjt.domain.music.MusicRepository;
+import com.cos.flopjt.domain.music.Song;
+import com.cos.flopjt.domain.music.SongRepository;
 import com.cos.flopjt.domain.reply.Reply;
 import com.cos.flopjt.domain.reply.ReplyRepository;
 import com.cos.flopjt.domain.user.User;
-import com.cos.flopjt.web.reply.dto.ReplySaveReqDto;
+import com.cos.flopjt.web.dto.reply.ReplySaveReqDto;
 
 import lombok.RequiredArgsConstructor;
 
@@ -17,13 +17,13 @@ import lombok.RequiredArgsConstructor;
 public class ReplyService {
 
 	private final ReplyRepository replyRepository;
-	private final MusicRepository musicRepository;
+	private final SongRepository songRepository;
 	
 	@Transactional
 	public Reply 댓글쓰기(ReplySaveReqDto replySaveReqDto, User user) {
-		Music albumEntity = musicRepository.findById(replySaveReqDto.getMusicId()).get();
+		Song albumEntity = songRepository.findById(replySaveReqDto.getMusicId()).get();
 		Reply reply = replySaveReqDto.toEntity();
-		reply.setMusic(albumEntity);
+		reply.setSong(albumEntity);
 		reply.setUser(user);
 		Reply replyEntity = replyRepository.save(reply);
 		

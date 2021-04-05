@@ -11,17 +11,17 @@
 		</div>
 
 		<div class="albums row">
-			<c:forEach var="music" items="${musics.content}">
+			<c:forEach var="song" items="${songs.content}">
 				<div class="col-sm-6">
 					<div class="album">
-						<img src="${music.imgUrl}" alt="cover" class="img-responsive">
+						<img src="/image/albums/${song.img}" alt="cover" class="img-responsive">
 						<div class="cd-mask">
 							<div class="center"></div>
 						</div>
 						<div class="info">
-							<a class="album-name" href="/album/${music.id}">${music.title} <i class="fa fa-arrow-circle-right"></i></a>
+							<a class="album-name" href="/album/${song.id}">${song.title} <i class="fa fa-arrow-circle-right"></i></a>
 							<br>
-							<p>${music.artist}</p>
+							<p>${song.artist}</p>
 						</div>
 					</div>
 				</div>
@@ -30,19 +30,19 @@
 		
 		<div class="button-container">
 			<c:choose>
-				<c:when test="${musics.first}">
+				<c:when test="${songs.first}">
 					<a class="button"><i class="fa fa-step-backward"></i>  Previous</a>
 				</c:when>
 				<c:otherwise>
-					<a class="button" href="?page=${musics.number-1}"><i class="fa fa-step-backward"></i>  Previous</a>
+					<a class="button" href="?page=${songs.number-1}"><i class="fa fa-step-backward"></i>  Previous</a>
 				</c:otherwise>
 			</c:choose>
 			<c:choose>
-				<c:when test="${musics.last}">
+				<c:when test="${songs.last}">
 					<a class="button">Next  <i class="fa fa-step-forward"></i></a>
 				</c:when>
 				<c:otherwise>
-					<a class="button" href="?page=${musics.number+1}">Next  <i class="fa fa-step-forward"></i></a>
+					<a class="button" href="?page=${songs.number+1}">Next  <i class="fa fa-step-forward"></i></a>
 				</c:otherwise>
 			</c:choose>
 		</div>

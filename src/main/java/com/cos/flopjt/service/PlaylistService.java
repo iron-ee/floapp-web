@@ -3,12 +3,12 @@ package com.cos.flopjt.service;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.cos.flopjt.domain.music.Music;
-import com.cos.flopjt.domain.music.MusicRepository;
+import com.cos.flopjt.domain.music.Song;
+import com.cos.flopjt.domain.music.SongRepository;
 import com.cos.flopjt.domain.playlist.Playlist;
 import com.cos.flopjt.domain.playlist.PlaylistRepository;
 import com.cos.flopjt.domain.user.User;
-import com.cos.flopjt.web.playlist.dto.PlaylistSaveReqDto;
+import com.cos.flopjt.web.dto.playlist.PlaylistSaveReqDto;
 
 import lombok.RequiredArgsConstructor;
 
@@ -17,13 +17,13 @@ import lombok.RequiredArgsConstructor;
 public class PlaylistService {
 
 	private final PlaylistRepository playlistRepository;
-	private final MusicRepository musicRepository;
+	private final SongRepository songRepository;
 	
 	@Transactional
 	public Playlist 리스트추가(PlaylistSaveReqDto playlistSaveReqDto, User user) {
-		Music listEntity = musicRepository.findById(playlistSaveReqDto.getMusicId()).get();
+		Song listEntity = songRepository.findById(playlistSaveReqDto.getMusicId()).get();
 		Playlist playlist = playlistSaveReqDto.toEntity();
-		playlist.setMusic(listEntity);
+		playlist.setSong(listEntity);
 		playlist.setUser(user);
 		Playlist playlistEntity = playlistRepository.save(playlist);
 		

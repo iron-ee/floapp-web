@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
-import com.cos.flopjt.domain.music.Music;
+import com.cos.flopjt.domain.music.Song;
 import com.cos.flopjt.domain.user.User;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -33,6 +33,6 @@ public class Playlist {
 	
 	@JsonIgnoreProperties({"replys"})
 	@ManyToOne
-	@JoinColumn(name = "musicId")
-	private Music music;
+	@JoinColumn(name = "songId")
+	private Song song;
 }

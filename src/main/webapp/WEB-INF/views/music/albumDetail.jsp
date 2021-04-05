@@ -10,14 +10,14 @@
 			<div class="col-sm-4">
 				<div class="album-single-info">
 					<div class="img-container">
-						<img src="${music.imgUrl}" alt="Cover" class="img-responsive">
-						<a id="list-add" class="buy"><span class="price">Like</span> Add List <i class="fa fa-shopping-cart"></i><input type="hidden" id="musicId-list" value="${music.id}" /></a>
+						<img src="/image/${song.img}" alt="Cover" class="img-responsive">
+						<a id="list-add" class="buy"><span class="price">Like</span> Add List <i class="fa fa-shopping-cart"></i><input type="hidden" id="musicId-list" value="${song.id}" /></a>
 					</div>
-					<h2><i class="fa fa-dot-circle-o"></i> ${music.title}</h2>
+					<h2><i class="fa fa-dot-circle-o"></i> ${song.title}</h2>
 					<ul>
-						<li><span class="colored">Artist:</span> ${music.artist}</li>
-						<li><span class="colored">Release Date:</span> ${music.releaseDate}</li>
-						<li><span class="colored">Genre:</span> ${music.category}</li>
+						<li><span class="colored">Artist:</span> ${song.artist}</li>
+						<li><span class="colored">Release Date:</span> ${song.releaseDate}</li>
+						<li><span class="colored">Genre:</span> ${song.category}</li>
 						<li><span class="colored">Produced By:</span> Music Production INC</li>
 					</ul>
 				</div>
@@ -60,14 +60,14 @@
 							<!-- Playlist -->
 							<div class="jp-playl">
 								<ul>
-									<li id="music-${music.id}">
+									<li id="music-${song.id}">
 									<div>
-										<a id="music-artist">${music.artist}  - </a>
-										<a id="music-title" onClick="musicppap(${music.mp3})" >${music.title}</a>
+										<a id="music-artist">${song.artist}  - </a>
+										<a id="music-title" onClick="musicppap('${song.file}', '${song.artist}', '${song.title}')" >${song.title}</a>
 										<button id="btn-url"  class="jp-next">
 											<i class="fa fa-play"></i>
 										</button>
-										<input type="hidden" id="music-url" value="${music.mp3}" />
+										<input type="hidden" id="music-url" value="${song.file}" />
 									</div>
 								</li>
 								</ul>
@@ -80,7 +80,7 @@
 					</div>
 				</div>
 
-				<p>This is our best albums launched in 2015. it contains eight awesome tracks recorded especially for you. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+				<p>${song.lyrics}</p>
 			</div>
 		</div>
 	</div>
@@ -95,7 +95,7 @@
 				<h3>Leave a comment</h3>
 
 				<form name="contact" id="comment-form">
-					<input type="hidden" id="musicId" value="${music.id}" />
+					<input type="hidden" id="musicId" value="${song.id}" />
 					<div class="field">
 						<p>Type a message <span class="colored">*</span></p>
 						<textarea id="reply-content" cols="15" rows="5" class="required" placeholder="Message..." title="Please type a message." name="message"></textarea>
@@ -107,7 +107,7 @@
 				</form>
 
 				<!-- Comment  -->
-				<c:forEach var="reply" items="${music.replys}">
+				<c:forEach var="reply" items="${song.replys}">
 					<div id="reply-${reply.id}" class="comment">
 						<div class="avatar">
 							<img src="http://localhost:8080/assets/img/blog/avatar-1.jpg" alt="Avatar">
@@ -195,9 +195,11 @@
 	</script>
     
     <script>
-    function musicppap(id){
+    function musicppap(id, artist, title){
 		let url = $("#btn-url").val();
 		console.log(id);
+		console.log(artist);
+		console.log(title);
 		jQuery(document).ready(function($) {
 		
 	   		"use strict";
@@ -207,10 +209,10 @@
 				cssSelectorAncestor: "#jp_container_2"
 			}, [
 				{	
-					mp3:"http://localhost:8080/assets/music/"+id+".mp3",
+					mp3:"/songlist/"+id,
 				},
 				{	
-					mp3:"http://localhost:8080/assets/music/"+id+".mp3",
+					mp3:"/songlist/"+id,
 				},
 			], {
 				playlistOptions: {

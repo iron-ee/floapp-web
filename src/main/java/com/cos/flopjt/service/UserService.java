@@ -6,7 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.cos.flopjt.domain.user.User;
 import com.cos.flopjt.domain.user.UserRepository;
-import com.cos.flopjt.web.user.dto.UserUpdateReqDto;
+import com.cos.flopjt.web.dto.user.UserUpdateReqDto;
 
 import lombok.RequiredArgsConstructor;
 

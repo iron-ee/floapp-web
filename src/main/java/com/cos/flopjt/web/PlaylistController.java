@@ -14,7 +14,7 @@ import com.cos.flopjt.domain.user.User;
 import com.cos.flopjt.service.PlaylistService;
 import com.cos.flopjt.service.UserService;
 import com.cos.flopjt.web.dto.CMRespDto;
-import com.cos.flopjt.web.playlist.dto.PlaylistSaveReqDto;
+import com.cos.flopjt.web.dto.playlist.PlaylistSaveReqDto;
 
 import lombok.RequiredArgsConstructor;
 
@@ -29,7 +29,7 @@ public class PlaylistController {
 	public String list(@PathVariable int id, Model model) {
 		User listEntity = userService.노래보기(id);
 		model.addAttribute("user", listEntity);
-		return "test/test1";
+		return "playlist/playlistForm";
 	}
 	
 	@PostMapping("/listAdd")

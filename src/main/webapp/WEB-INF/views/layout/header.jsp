@@ -35,8 +35,6 @@
 	<script type="text/javascript" src="http://localhost:8080/assets/js/jquery.fitvids.js"></script>
 	<script type="text/javascript" src="http://localhost:8080/assets/owl-carousel/owl.carousel.min.js"></script>
 	<script type="text/javascript" src="http://localhost:8080/assets/lightGallery/js/lightgallery.min.js"></script>
-	<script type="text/javascript" src="http://localhost:8080/assets/js/ajax.gallery.js"></script>
-	<script type="text/javascript" src="http://localhost:8080/assets/js/instafeed.min.js"></script>
 	<script type="text/javascript" src="http://localhost:8080/assets/js/countdown.js"></script>
 	<script type="text/javascript" src="http://localhost:8080/assets/js/jquery.validate.min.js"></script>
 	<!-- RS5.0 Core JS Files -->
@@ -163,10 +161,15 @@
 							<li><a href="/videoForm">Video Gallery</a></li>					
 						</ul>
 					</li>
+					
 					<c:choose>
 						<c:when test="${empty principal}">
 							<li><a href="/joinForm">join</a></li>
 							<li><a href="/loginForm">login</a></li>
+						</c:when>
+						<c:when test="${principal.user.role == 'ADMIN'}">
+							<li><a href="/admin/songAddForm">ADD</a>
+							<li><a href="/logout">logout</a></li>
 						</c:when>
 						<c:otherwise>
 							<li><a href="/list/${principal.user.id}">list</a></li>

@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.cos.flopjt.config.auth.PrincipalDetails;
 import com.cos.flopjt.service.UserService;
 import com.cos.flopjt.web.dto.CMRespDto;
-import com.cos.flopjt.web.user.dto.UserUpdateReqDto;
+import com.cos.flopjt.web.dto.user.UserUpdateReqDto;
 
 import lombok.RequiredArgsConstructor;
 

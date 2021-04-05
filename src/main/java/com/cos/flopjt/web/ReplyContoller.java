@@ -11,7 +11,7 @@ import com.cos.flopjt.config.auth.PrincipalDetails;
 import com.cos.flopjt.domain.reply.Reply;
 import com.cos.flopjt.service.ReplyService;
 import com.cos.flopjt.web.dto.CMRespDto;
-import com.cos.flopjt.web.reply.dto.ReplySaveReqDto;
+import com.cos.flopjt.web.dto.reply.ReplySaveReqDto;
 
 import lombok.RequiredArgsConstructor;
 
