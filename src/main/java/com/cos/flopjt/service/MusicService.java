@@ -49,13 +49,21 @@ public class MusicService {
 		System.out.println("img파일명 : "+imgFileName);
 		System.out.println("mp3파일명 :"+mp3FileName);
 		
-		Path imgFilePath = Paths.get(ProjectPath.IMGUPLOADFOLDER+imgFileName);
-		Path mp3FilePath = Paths.get(ProjectPath.MP3UPLOADFOLDER+mp3FileName);
-		System.out.println("img파일패스 :"+imgFilePath);
-		System.out.println("mp3파일패스 :"+mp3FilePath);
+		Path imgFilePathWeb = Paths.get(ProjectPath.IMGUPLOADFOLDERWEB+imgFileName);
+		Path imgFilePathApp = Paths.get(ProjectPath.IMGUPLOADFOLDERAPP+imgFileName);
+		
+		Path mp3FilePathWeb = Paths.get(ProjectPath.MP3UPLOADFOLDERWEB+mp3FileName);
+		Path mp3FilePathApp = Paths.get(ProjectPath.MP3UPLOADFOLDERAPP+mp3FileName);
+		System.out.println("img파일패스 :"+imgFilePathWeb);
+		System.out.println("img파일패스 :"+imgFilePathApp);
+		System.out.println("mp3파일패스 :"+mp3FilePathWeb);
+		System.out.println("mp3파일패스 :"+mp3FilePathApp);
 		try {
-			Files.write(imgFilePath, songReqDto.getImg().getBytes());
-			Files.write(mp3FilePath, songReqDto.getFile().getBytes());
+			Files.write(imgFilePathWeb, songReqDto.getImg().getBytes());
+			Files.write(imgFilePathApp, songReqDto.getImg().getBytes());
+			
+			Files.write(mp3FilePathWeb, songReqDto.getFile().getBytes());
+			Files.write(mp3FilePathApp, songReqDto.getFile().getBytes());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
