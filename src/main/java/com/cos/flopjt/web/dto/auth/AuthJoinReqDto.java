@@ -9,14 +9,13 @@ public class AuthJoinReqDto {
 
 	private String username;
 	private String password;
-	private String nickname;
+	private String email;
 	
 	public User toEntity() {
 		return User.builder()
 				.username(username)
 				.password(password)
-				.nickname(nickname)
-				.email(username)
+				.email(email)
 				.build();
 	}
 }

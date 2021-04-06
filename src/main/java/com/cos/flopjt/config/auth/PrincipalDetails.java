@@ -45,10 +45,10 @@ public class PrincipalDetails implements UserDetails, OAuth2User{
 	public String getPassword() {
 		return user.getPassword();
 	}
-
+	
 	@Override
 	public String getUsername() {
-		return user.getNickname();
+		return user.getUsername();
 	}
 
 	@Override
@@ -79,5 +79,6 @@ public class PrincipalDetails implements UserDetails, OAuth2User{
 		collectors.add(()->"ROLE_"+user.getRole().toString());
 		return collectors;
 	}
+
 
 }

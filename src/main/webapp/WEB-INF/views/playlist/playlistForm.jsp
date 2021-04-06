@@ -61,16 +61,16 @@
 					</div>
 					<!-- Playlist -->
 					<div class="jp-playl">
-						<c:forEach var="playlist" items="${user.plist}">
+						<c:forEach var="playsong" items="${user.plist}">
 							<ul>
-								<li id="list-${playlist.id}">
+								<li id="list-${playsong.id}">
 									<div>
-										<a id="music-artist">${playlist.song.artist}  - </a>
-										<a id="music-title" onClick="musicppap('${playlist.song.file}')" >${playlist.song.title}</a>
+										<a id="music-artist">${playsong.song.artist}  - </a>
+										<a id="music-title" onClick="musicppap('${playsong.song.file}')" >${playsong.song.title}</a>
 										<button id="btn-url"  class="jp-next">
 											<i class="fa fa-play"></i>
 										</button>
-										<input type="hidden" id="music-url" value="${playlist.song.file}" />
+										<input type="hidden" id="music-url" value="${playsong.song.file}" />
 									</div>
 								</li>
 							</ul>

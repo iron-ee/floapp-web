@@ -20,7 +20,6 @@
 	<link rel="stylesheet" type="text/css" href="http://localhost:8080/assets/css/style.css" />
 	    <!-- ======== JavaScript ======== -->
 	<script type="text/javascript" src="http://localhost:8080/assets/js/jquery-1.11.1.min.js"></script>
-
 	<script type="text/javascript" src="http://localhost:8080/assets/js/bootstrap.js"></script>
 	<script type="text/javascript" src="http://localhost:8080/assets/js/jquery.fitvids.js"></script>
 	<script type="text/javascript" src="http://localhost:8080/assets/owl-carousel/owl.carousel.min.js"></script>
@@ -46,8 +45,8 @@
 		<div class="container">
 			<form action="/join" method="post" name="contact" id="contact-form">
 				<div class="field">
-					<p>ID (Email 형식) <span class="colored">*</span></p>
-					<input name="username" type="email" class="required" title="Please type your ID" placeholder="Email ...">
+					<p>ID  <span class="colored">*</span></p>
+					<input name="username" type="text" class="required" title="Please type your ID" placeholder="User ID ...">
 				</div>
 
 				<div class="field">
@@ -56,8 +55,8 @@
 				</div>
 
 				<div class="field">
-					<p>NickName <span class="colored">*</span></p> 
-					<input name="nickname" type="text" class="required" title="Please type your NickName" placeholder="NickName...">
+					<p>Email <span class="colored">*</span></p> 
+					<input name="email" type="email" class="required" title="Please type your NickName" placeholder="Email ...">
 				</div>
 
 				<div class="button-container">

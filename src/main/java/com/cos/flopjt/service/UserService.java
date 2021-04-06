@@ -18,16 +18,19 @@ public class UserService {
 	private final BCryptPasswordEncoder bCryptPasswordEncoder;
 	
 	public User 노래보기(int id) {
-			return userRepository.findById(id).get();
+			return userRepository.findById(id).orElseThrow(()->{
+				return new IllegalArgumentException("id를 찾을 수 없습니다.");
+			});
 		}
 	
 	@Transactional
 	public User 회원수정(int id, UserUpdateReqDto userUpdateReqDto) {
-		User userEntity = userRepository.findById(id).get();
+		User userEntity = userRepository.findById(id).orElseThrow(()->{
+			return new IllegalArgumentException("id를 찾을 수 없습니다.");
+		});
 		String encPassword = bCryptPasswordEncoder.encode(userUpdateReqDto.getPassword());
 		
 		userEntity.setPassword(encPassword);
-		userEntity.setNickname(userUpdateReqDto.getNickname());
 		userEntity.setEmail(userUpdateReqDto.getEmail());
 		
 		return userEntity;

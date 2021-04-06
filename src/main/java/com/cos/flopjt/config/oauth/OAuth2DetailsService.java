@@ -66,7 +66,6 @@ public class OAuth2DetailsService extends DefaultOAuth2UserService{
 			User user = User.builder()
 					.username(oAuth2UserInfo.getUsername())
 					.password(encPassword)
-					.nickname(oAuth2UserInfo.getName())
 					.email(oAuth2UserInfo.getEmail())
 					.role(RoleType.USER)
 					.build();

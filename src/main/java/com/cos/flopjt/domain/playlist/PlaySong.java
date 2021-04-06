@@ -1,5 +1,7 @@
 package com.cos.flopjt.domain.playlist;
 
+import java.sql.Timestamp;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -7,9 +9,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 import com.cos.flopjt.domain.music.Song;
 import com.cos.flopjt.domain.user.User;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -21,7 +24,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 @Entity
-public class Playlist {
+public class PlaySong {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,8 +34,11 @@ public class Playlist {
 	@JoinColumn(name = "userId")
 	private User user;
 	
-	@JsonIgnoreProperties({"replys"})
+	//@JsonIgnoreProperties({"replys"})
 	@ManyToOne
 	@JoinColumn(name = "songId")
 	private Song song;
+	
+	@CreationTimestamp
+	private Timestamp createDate;
 }

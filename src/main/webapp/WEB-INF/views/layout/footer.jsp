@@ -22,7 +22,7 @@
 		</div>
 
 		<div class="copyright-footer">
-			<p>Copyright © 2015 FutureThemes / <a href="#">@futurethemes</a></p>
+			<p>Develop © 2021 정철 상훈 / 민규 신율</p>
 		</div>
 	</footer>
 

@@ -1,6 +1,6 @@
 package com.cos.flopjt.web.dto.playlist;
 
-import com.cos.flopjt.domain.playlist.Playlist;
+import com.cos.flopjt.domain.playlist.PlaySong;
 
 import lombok.Data;
 
@@ -9,7 +9,7 @@ public class PlaylistSaveReqDto {
 
 	private Integer musicId;
 	
-	public Playlist toEntity() {
-		return Playlist.builder().build();
+	public PlaySong toEntity() {
+		return PlaySong.builder().build();
 	}
 }

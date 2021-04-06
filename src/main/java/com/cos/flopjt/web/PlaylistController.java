@@ -7,9 +7,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.cos.flopjt.config.auth.PrincipalDetails;
-import com.cos.flopjt.domain.playlist.Playlist;
+import com.cos.flopjt.domain.playlist.PlaySong;
 import com.cos.flopjt.domain.user.User;
 import com.cos.flopjt.service.PlaylistService;
 import com.cos.flopjt.service.UserService;
@@ -33,13 +34,13 @@ public class PlaylistController {
 	}
 	
 	@PostMapping("/listAdd")
-	public CMRespDto<?> save(@RequestBody PlaylistSaveReqDto playlistSaveReqDto, @AuthenticationPrincipal PrincipalDetails principalDetails) {
-		Playlist playlistEntity = playlistService.리스트추가(playlistSaveReqDto, principalDetails.getUser());
+	public @ResponseBody CMRespDto<?> save(@RequestBody PlaylistSaveReqDto playlistSaveReqDto, @AuthenticationPrincipal PrincipalDetails principalDetails) {
+		PlaySong playlistEntity = playlistService.리스트추가(playlistSaveReqDto, principalDetails.getUser());
 		
 		if (playlistEntity == null) {
-			return new CMRespDto<>(-1, null);
+			return new CMRespDto<>(-1, "리스트 추가 실패", null);
 		}else {
-			return new CMRespDto<>(1, playlistEntity);
+			return new CMRespDto<>(1, "리스트 추가 성공", playlistEntity);
 		}
 	}
 }

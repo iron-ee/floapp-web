@@ -14,7 +14,7 @@
 			<c:forEach var="song" items="${songs.content}">
 				<div class="col-sm-6">
 					<div class="album">
-						<img src="/image/albums/${song.img}" alt="cover" class="img-responsive">
+						<img src="/image/${song.img}" alt="cover" class="img-responsive">
 						<div class="cd-mask">
 							<div class="center"></div>
 						</div>

@@ -17,7 +17,7 @@ import javax.persistence.OrderBy;
 
 import org.hibernate.annotations.CreationTimestamp;
 
-import com.cos.flopjt.domain.playlist.Playlist;
+import com.cos.flopjt.domain.playlist.PlaySong;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
@@ -42,12 +42,8 @@ public class User {
 	@Column(nullable = false, length = 100)
 	private String password;
 	
-	@Column(nullable = true, length = 100)
-	private String nickname;
-	
 	@Column(nullable = true)
 	private String email;
-	
 	
 	@Enumerated(EnumType.STRING)
 	private RoleType role;
@@ -55,7 +51,7 @@ public class User {
 	@OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties({"user"})
 	@OrderBy("id desc")
-	private List<Playlist> plist;
+	private List<PlaySong> plist;
 	
 	@CreationTimestamp
 	private Timestamp createDate;

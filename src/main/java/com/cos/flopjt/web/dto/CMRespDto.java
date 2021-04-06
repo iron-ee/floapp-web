@@ -9,5 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class CMRespDto<T> {
 	private int statusCode; // 1 성공, -1 실패
+	private String msg;
 	private T data;
+
 }

@@ -40,6 +40,6 @@ public class UserController {
 		
 		userService.회원수정(id, userUpdateReqDto);
 		
-		return new CMRespDto<>(1, null);
+		return new CMRespDto<>(1, "회원 수정 성공", null);
 	}
 }

@@ -12,8 +12,8 @@
 			<form id="contact-form" name="contact">
 				<input type="hidden" id="id" value="${id}"	/>
 				<div class="field">
-					<p>ID (Email 형식) <span class="colored"></span></p>
-					<input id="username" name="username" type="email" readonly="readonly" value="${principal.user.username}">
+					<p>ID  <span class="colored"></span></p>
+					<input id="username" name="username" type="text" readonly="readonly" value="${principal.user.username}">
 				</div>
 
 				<div class="field">
@@ -21,11 +21,6 @@
 					<input id="password" name="password" type="password" title="Please type your Password" placeholder="Change your Password" class="required">
 				</div>
 
-				<div class="field">
-					<p>NickName <span class="colored"></span></p> 
-					<input id="nickname" name="nickname" type="text" title="Please type your NickName" placeholder="Your NickName" value="${principal.user.nickname}">
-				</div>
-				
 				<div class="field">
 					<p>Email <span class="colored"></span></p> 
 					<input id="email" name="email" type="email" title="Please type your Email" placeholder="Your Email" value="${principal.user.email}">
@@ -46,7 +41,6 @@
 			let data={
 					username: $("#username").val(),
 					password: $("#password").val(),
-					nickname: $("#nickname").val(),
 					email: $("#email").val(),
 				};
 
@@ -63,8 +57,8 @@
 			}).done((res)=>{
 				console.log(res);
 				if(res.statusCode == 1){
-					alert("수정에 성공하였습니다.");
-					location.href = "/";
+					alert("수정에 성공하였습니다. 다시 로그인 해주세요 !");
+					location.href = "/logout";
 				}else{
 					alert("수정에 실패하였습니다.");
 				}

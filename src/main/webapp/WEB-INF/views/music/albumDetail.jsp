@@ -101,7 +101,7 @@
 						<textarea id="reply-content" cols="15" rows="5" class="required" placeholder="Message..." title="Please type a message." name="message"></textarea>
 					</div>
 
-					<button id="btn-reply-save" class="button">
+					<button id="btn-reply-save" name="submit" class="button">
 		               	<span>Post Comment</span> <i class="fa fa-comment"></i>
 	            	</button>
 				</form>
@@ -112,7 +112,7 @@
 						<div class="avatar">
 							<img src="http://localhost:8080/assets/img/blog/avatar-1.jpg" alt="Avatar">
 						</div>
-						<h4>${reply.user.nickname}</h4>
+						<h4>${reply.user.username}</h4>
 						<p>${reply.content}</p>
 						<c:if test="${reply.user.id == principal.user.id}">
 							<a onClick="deleteReply(${reply.id})" class="reply">delete</a>
@@ -127,114 +127,115 @@
     
     
     <script>
-	$("#list-add").on("click", (e)=>{
-		e.preventDefault();
-		let dataId = {
-				musicId: $("#musicId-list").val(),
-				};
-		console.log(dataId);
-		$.ajax({
-			type:"POST",
-			url:"/listAdd",
-			data:JSON.stringify(dataId),
-			contentType:"application/json; charset=utf-8",
-			dataType:"json"
-		}).done((res)=>{
-			console.log(res);
-			if(res.statusCode === 1){
-				alert("리스트에 추가되었습니다.")
-			}else{
-				alert("리스트 추가에 실패하였습니다.")
-			}
+		$("#list-add").on("click", (e)=>{
+			e.preventDefault();
+			let dataId = {
+					musicId: $("#musicId-list").val(),
+					};
+			console.log(dataId);
+			$.ajax({
+				type:"POST",
+				url:"/listAdd",
+				data:JSON.stringify(dataId),
+				contentType:"application/json; charset=utf-8",
+				dataType:"json"
+			}).done((res)=>{
+				console.log(res);
+				if(res.statusCode === 1){
+					alert("리스트에 추가되었습니다.");
+				}else{
+					alert("리스트 추가에 실패하였습니다.");
+				}
+			});
+			
 		});
-		
-	});
 	</script>
     
     <script>
-	$("#btn-reply-save").on("click", (e)=>{
-		e.preventDefault();
-		let data = {
-				musicId: $("#musicId").val(),
-				content: $("#reply-content").val()
-				};
-		console.log(data);
-		$.ajax({
-			type:"POST",
-			url:"/reply",
-			data:JSON.stringify(data),
-			contentType:"application/json; charset=utf-8",
-			dataType:"json"
-		}).done((res)=>{
-			console.log(res);
-			if(res.statusCode === 1){
-				location.reload();
-			}else{
-				alert("댓글 작성에 실패하였습니다.")
-			}
+		$("#btn-reply-save").on("click", (e)=>{
+			e.preventDefault();
+			let data = {
+					musicId: $("#musicId").val(),
+					content: $("#reply-content").val()
+					};
+			console.log(data);
+			$.ajax({
+				type:"POST",
+				url:"/reply",
+				data:JSON.stringify(data),
+				contentType:"application/json; charset=utf-8",
+				dataType:"json"
+			}).done((res)=>{
+				console.log(res);
+				if(res.statusCode === 1){
+					alert("댓글이 작성되었습니다.");
+					location.reload();
+				}else{
+					alert("댓글 작성에 실패하였습니다.");
+				}
+			});
+			
 		});
-		
-	});
 	</script>
 	
 	<script>
-	function deleteReply(id){
-		$.ajax({
-			type:"DELETE",
-			url:"/reply/"+id,
-			dataType:"json"
-		}).done((res)=>{
-			console.log(res);
-			if(res.statusCode === 1){
-				$("#reply-"+id).remove();
-			}else{
-				alert("삭제에 실패하였습니다.")
-			}
-		});
-	}
+		function deleteReply(id){
+			$.ajax({
+				type:"DELETE",
+				url:"/reply/"+id,
+				dataType:"json"
+			}).done((res)=>{
+				console.log(res);
+				if(res.statusCode === 1){
+					$("#reply-"+id).remove();
+				}else{
+					alert("삭제에 실패하였습니다.");
+				}
+			});
+		}
 	</script>
     
     <script>
-    function musicppap(id, artist, title){
-		let url = $("#btn-url").val();
-		console.log(id);
-		console.log(artist);
-		console.log(title);
-		jQuery(document).ready(function($) {
-		
-	   		"use strict";
-
-			var myPlaylist2 = new jPlayerPlaylist({
-				jPlayer: "#jquery_jplayer_2",
-				cssSelectorAncestor: "#jp_container_2"
-			}, [
-				{	
-					mp3:"/songlist/"+id,
-				},
-				{	
-					mp3:"/songlist/"+id,
-				},
-			], {
-				playlistOptions: {
-				    enableRemoveControls: true
-				},
-				swfPath: "http://localhost:8080/assets/jplayer/jplayer",
-				supplied: "mp3",
-				wmode: "window",
-				useStateClassSkin: true,
-				autoBlur: false,
-				smoothPlayBar: true,
-				keyEnabled: true,
+	    function musicppap(id, artist, title){
+			let url = $("#btn-url").val();
+			console.log(id);
+			console.log(artist);
+			console.log(title);
+			jQuery(document).ready(function($) {
+			
+		   		"use strict";
+	
+				var myPlaylist2 = new jPlayerPlaylist({
+					jPlayer: "#jquery_jplayer_2",
+					cssSelectorAncestor: "#jp_container_2"
+				}, [
+					{	
+						mp3:"/songlist/"+id,
+					},
+					{	
+						mp3:"/songlist/"+id,
+					},
+				], {
+					playlistOptions: {
+					    enableRemoveControls: true
+					},
+					swfPath: "http://localhost:8080/assets/jplayer/jplayer",
+					supplied: "mp3",
+					wmode: "window",
+					useStateClassSkin: true,
+					autoBlur: false,
+					smoothPlayBar: true,
+					keyEnabled: true,
+				});
+				
+				
+				$("#jquery_jplayer_2").on($.jPlayer.event.play, function(event) {
+				       $('#player-bars').addClass('animated');
+				   	}
+				);
+	
 			});
-			
-			
-			$("#jquery_jplayer_2").on($.jPlayer.event.play, function(event) {
-			       $('#player-bars').addClass('animated');
-			   	}
-			);
-
-		});
-	};
+		};
 	</script>
     
 <%@ include file="../layout/footer.jsp" %>

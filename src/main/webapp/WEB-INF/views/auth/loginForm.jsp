@@ -20,13 +20,10 @@
 	<link rel="stylesheet" type="text/css" href="http://localhost:8080/assets/css/style.css" />
 	    <!-- ======== JavaScript ======== -->
 	<script type="text/javascript" src="http://localhost:8080/assets/js/jquery-1.11.1.min.js"></script>
-	<script type="text/javascript" src="http://localhost:8080/assets/js/smooth-scroll.js"></script>
 	<script type="text/javascript" src="http://localhost:8080/assets/js/bootstrap.js"></script>
 	<script type="text/javascript" src="http://localhost:8080/assets/js/jquery.fitvids.js"></script>
 	<script type="text/javascript" src="http://localhost:8080/assets/owl-carousel/owl.carousel.min.js"></script>
 	<script type="text/javascript" src="http://localhost:8080/assets/lightGallery/js/lightgallery.min.js"></script>
-	<script type="text/javascript" src="http://localhost:8080/assets/js/ajax.gallery.js"></script>
-	<script type="text/javascript" src="http://localhost:8080/assets/js/instafeed.min.js"></script>
 	<script type="text/javascript" src="http://localhost:8080/assets/js/countdown.js"></script>
 	<script type="text/javascript" src="http://localhost:8080/assets/js/jquery.validate.min.js"></script>
 	<!-- RS5.0 Core JS Files -->
@@ -48,8 +45,8 @@
 		<div class="container">
 			<form action="/login" method="post" name="contact" id="contact-form">
 				<div class="field">
-					<p>ID (Email 형식) <span class="colored">*</span></p>
-					<input name="username" type="email" class="required" title="Please type your ID" placeholder="Email ...">
+					<p>ID <span class="colored">*</span></p>
+					<input name="username" type="text" class="required" title="Please type your ID" placeholder="Email ...">
 				</div>
 
 				<div class="field">
